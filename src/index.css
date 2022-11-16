@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --gradient-a: radial-gradient(at 18% 99%, rgb(223, 229, 113) 0px, transparent 50%) repeat scroll 0 0;
+  --navbar-height: 124px;
+  --move-var: 100%;
+  --on-duty: 1;
+  --top-a-hover-color: #000000;
+}
+
+#root {
+  /*height: 100%;*/
+  /*width: 100%;*/
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+[on-page='2'], [on-page='3'] {
+  --top-a-hover-color: #ffffff;
+}
+
+[on-page='2'] .top-link:hover .light, [on-page='3'] .top-link:hover .light {
+  display: block !important;
+}
+
+[on-page='2'] .top-link:hover .dark, [on-page='3'] .top-link:hover .dark {
+  display: none !important;
+}
+
+.top-middle > div > a:hover,
+.top-link:hover {
+  color: var(--top-a-hover-color);
+}
