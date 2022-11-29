@@ -1,6 +1,8 @@
+@import url(./fonts.css);
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+  font-family: -apple-system, BlinkMacSystemFont, 'Montserrat', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,6 +11,7 @@ body {
 :root {
   --gradient-a: radial-gradient(at 18% 99%, rgb(223, 229, 113) 0px, transparent 50%) repeat scroll 0 0;
   --navbar-height: 124px;
+  --top-nav-bar-alpha: 0;
   --move-var: 100%;
   --on-duty: 1;
   --top-a-hover-color: #000000;
@@ -20,7 +23,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: 'Montserrat', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 [on-page='2'], [on-page='3'] {
@@ -38,4 +41,10 @@ code {
 .top-middle > div > a:hover,
 .top-link:hover {
   color: var(--top-a-hover-color);
+}
+
+@media (max-width: 1080px) {
+  :root {
+    --navbar-height: 64px;
+  }
 }

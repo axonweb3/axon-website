@@ -108,21 +108,28 @@ const FindUsCard = (props: FindUsCardProps) => {
         font-weight: 600;
         font-size: 16px;
         line-height: 150%;
+        text-align: center;
         color: #4e3188;
         > div {
-          white-space: nowrap;
           transition: 0.6s;
         }
+        > div:first-child {
+          white-space: nowrap;
+          width: 110px;
+        }
         > div:last-child {
-          margin-left: 10px;
+          margin-left: 4px;
+        }
+        .fu-dark {
+          margin-left: -14px;
         }
       }
     }
-    .light {
-      display: none;
+    .fu-light {
+      visibility: hidden;
     }
-    .dark {
-      display: block;
+    .fu-dark {
+      visibility: visible;
     }
     :hover {
       .shadow {
@@ -162,18 +169,20 @@ const FindUsCard = (props: FindUsCardProps) => {
         -webkit-text-fill-color: transparent;
         text-fill-color: transparent;
       }
-      .light {
-        display: block;
+      .fu-light {
+        visibility: visible;
       }
-      .dark {
-        display: none;
+      .fu-dark {
+        visibility: hidden;
       }
       .card-link {
         > div:first-child {
-          transform: translate(20px, 0);
+          //transform: translate(20px, 0);
+          letter-spacing: 0.1em;
         }
         > div:last-child {
-          transform: translate(20px, -8px);
+          //transform: translate(20px, -8px);
+          transform: translate(8px, -4px);
         }
       }
     }
@@ -188,16 +197,16 @@ const FindUsCard = (props: FindUsCardProps) => {
         <Card />
       </div>
       <div className="content">
-        <div className="card-logo light">{logoLight}</div>
-        <div className="card-logo dark">{logoDark}</div>
+        <div className="card-logo fu-light">{logoLight}</div>
+        <div className="card-logo fu-dark">{logoDark}</div>
         <div className="card-title">{title}</div>
         <div className="card-link">
           <div>Learn More</div>
           <div>
-            <div className="light">
+            <div className="fu-light">
               <ArrowOutwardColorful />
             </div>
-            <div className="dark">
+            <div className="fu-dark">
               <ArrowOutwardDark />
             </div>
           </div>

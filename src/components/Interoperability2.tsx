@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import ScatterBall from './ScatterBall';
+import ScatterBall1 from './ScatterBall1';
 
 const InteroperabilityWrapper = styled.div`
   height: 56vw;
@@ -101,6 +101,20 @@ const InteroperabilityWrapper = styled.div`
   }
 `;
 
+let timer: NodeJS.Timeout | null;
+const throttleTr = (el: Element, delay: number) => {
+  if (!timer) {
+    timer = setTimeout(() => {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      clearTimeout(timer!);
+      timer = null;
+    }, delay);
+    console.log('handleMouseEnter');
+    const tS = el.getAttribute('t-s');
+    el.setAttribute('t-s', tS !== '1' ? '1' : '0');
+  }
+};
+
 export default function Interoperability() {
   const ref = useRef(null);
   useEffect(() => {
@@ -123,10 +137,10 @@ export default function Interoperability() {
     <InteroperabilityWrapper>
       <div ref={ref}>
         <div className="interoperability-background">
-          <ScatterBall>Cosmos</ScatterBall>
-          <ScatterBall>Ethereum</ScatterBall>
-          <ScatterBall>Nervos</ScatterBall>
-          <ScatterBall>More</ScatterBall>
+          <ScatterBall1>Cosmos</ScatterBall1>
+          <ScatterBall1>Ethereum</ScatterBall1>
+          <ScatterBall1>Nervos</ScatterBall1>
+          <ScatterBall1>More</ScatterBall1>
         </div>
       </div>
       <div className="interoperability">

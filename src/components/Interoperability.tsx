@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import ScatterBall from './ScatterBall';
 
 const InteroperabilityWrapper = styled.div`
-  height: 56vw;
+  height: calc(100vh - var(--navbar-height));
   width: 100%;
   background-color: #b7c1e0;
   > div:first-child {
@@ -15,15 +15,29 @@ const InteroperabilityWrapper = styled.div`
     position: relative;
   }
 
+  video {
+    height: 100%;
+    width: 100%;
+    source {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
   .interoperability-background {
     height: 100%;
     width: 100%;
     display: block;
     position: relative;
+    background-image: url('./assets/pics/motion-bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     > div {
       position: absolute;
-      height: 20vw;
-      width: 20vw;
+      height: min(30vw, 35vh);
+      width: min(30vw, 35vh);
       margin: 30px auto;
       text-align: center;
       line-height: 200px;
@@ -31,6 +45,11 @@ const InteroperabilityWrapper = styled.div`
       font-size: 24px;
       border-radius: 50%;
       transition: 1s;
+    }
+    > div:nth-child(2) {
+      > canvas {
+        transform: scale(1.1);
+      }
     }
     [t-s='0'] {
       transform: none;
@@ -41,49 +60,62 @@ const InteroperabilityWrapper = styled.div`
     > div:first-child {
       top: 10%;
       left: 10%;
-      background: linear-gradient(to right top, darkmagenta, #61dafb 20%);
+      //background: linear-gradient(to right top, darkmagenta, #61dafb 20%);
       // ball-1
-      --t-x: 20%;
-      --t-y: 20%;
-      --t-r: 90deg;
+      --t-x: -20%;
+      --t-y: -10%;
+      --t-r: -20deg;
     }
     > div:nth-child(2) {
       top: 5%;
       left: 70%;
-      background: linear-gradient(to right top, #61dafb 60%, darkmagenta);
+      //background: linear-gradient(to right top, #61dafb 60%, darkmagenta);
       // ball-2
       --t-x: 20%;
       --t-y: 20%;
-      --t-r: 90deg;
+      --t-r: 30deg;
     }
     > div:nth-child(3) {
       top: 55%;
       left: 20%;
-      background: linear-gradient(to right top, #61dafb 10%, #f6f211 70%, chocolate);
+      //background: linear-gradient(to right top, #61dafb 10%, #f6f211 70%, chocolate);
       // ball-3
-      --t-x: 20%;
-      --t-y: 20%;
-      --t-r: 90deg;
+      --t-x: -20%;
+      --t-y: 5%;
+      --t-r: 30deg;
     }
     > div:nth-child(4) {
       top: 50%;
       left: 60%;
-      background: linear-gradient(to left top, #61dafb 10%, chartreuse);
+      //background: linear-gradient(to left top, #61dafb 10%, chartreuse);
       // ball-4
       --t-x: 20%;
-      --t-y: 20%;
-      --t-r: 90deg;
+      --t-y: 10%;
+      --t-r: -20deg;
     }
   }
 
-  .interoperability {
+  .interoperability-m {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: relative;
+    background-image: url('./assets/pics/interoperability-m.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .interoperability-title {
+    font-family: transducer, sans-serif;
     position: absolute;
+    transform: translateY(calc(-1 * var(--navbar-height) + 5vh));
     z-index: 15;
     > div {
       flex-direction: column;
       width: 300px;
       color: white;
-      font-size: 48px;
+      font-size: 60px;
       font-weight: 600;
 
       > strong {
@@ -96,23 +128,10 @@ const InteroperabilityWrapper = styled.div`
   }
 `;
 
-let timer: NodeJS.Timeout | null;
-const throttleTr = (el: Element, delay: number) => {
-  if (!timer) {
-    timer = setTimeout(() => {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      clearTimeout(timer!);
-      timer = null;
-    }, delay);
-    console.log('handleMouseEnter');
-    const tS = el.getAttribute('t-s');
-    el.setAttribute('t-s', tS !== '1' ? '1' : '0');
-  }
-};
-
 export default function Interoperability() {
   const ref = useRef(null);
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const bg = ref.current! as HTMLElement;
     const handleMouseMove = (event: MouseEvent) => {
       bg.style.setProperty('--m-x', (event.pageX / bg.offsetWidth).toString());
@@ -137,20 +156,31 @@ export default function Interoperability() {
   }, []);
 
   return (
-    <InteroperabilityWrapper>
+    <InteroperabilityWrapper className="interoperability">
       <div ref={ref}>
         <div className="interoperability-background">
-          <ScatterBall>Cosmos</ScatterBall>
-          <ScatterBall>Ethereum</ScatterBall>
-          <ScatterBall>Nervos</ScatterBall>
-          <ScatterBall>More</ScatterBall>
+          <div>
+            <ScatterBall texture="assets/pics/ball-cosmos.png" diameter={412} />
+          </div>
+          <div>
+            <ScatterBall texture="assets/pics/ball-ethereum.png" diameter={376} />
+          </div>
+          <div>
+            <ScatterBall texture="assets/pics/ball-nervos.png" diameter={446} />
+          </div>
+          <div>
+            <ScatterBall texture="assets/pics/ball-more.png" diameter={372} />
+          </div>
         </div>
+        <div className="interoperability-m" />
+        {/*<video id="v0" autoPlay loop muted>*/}
+        {/*  <source src="assets/v/interoperability-bg.mp4" type="video/mp4" />*/}
+        {/*</video>*/}
       </div>
-      <div className="interoperability">
+      <div className="interoperability-title">
         <div>
-          <div>Interoperability</div>
-          <div>in</div>
           <strong>AXON</strong>
+          <div>Interoperability</div>
         </div>
       </div>
     </InteroperabilityWrapper>

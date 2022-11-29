@@ -1,4 +1,7 @@
+import CloseIcon from '@mui/icons-material/Close';
 import TripOriginIcon from '@mui/icons-material/TripOrigin';
+import { SwipeableDrawer } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import styled from 'styled-components';
 import { ArrowOutwardBlack, ArrowOutwardLight } from './ArrowOutward';
@@ -9,7 +12,7 @@ const TopNavbarWrapper = styled.div`
   font-family: 'Montserrat', serif;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   border-bottom: solid #ffffff 1px;
   z-index: 10;
@@ -43,14 +46,17 @@ const TopNavbarWrapper = styled.div`
       color: #ffffff;
 
       > a {
+        width: 190px;
+        text-align: center;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
         line-height: 150%;
-        padding: 36px;
+        padding: 8px;
         cursor: default;
+        transition: letter-spacing 0.6s ease;
         :hover {
-          text-decoration: underline #61dafb;
+          letter-spacing: 0.2em;
         }
       }
     }
@@ -72,7 +78,7 @@ const TopNavbarWrapper = styled.div`
     }
     .top-link {
       border-bottom-style: solid;
-      border-bottom-width: 0.3px;
+      border-bottom-width: 2px;
       padding-bottom: 1px;
       > div {
         white-space: nowrap;
@@ -88,7 +94,8 @@ const TopNavbarWrapper = styled.div`
         display: none;
       }
       :hover {
-        padding-bottom: 0;
+        letter-spacing: 0.2em;
+        //padding-bottom: 0;
         .light {
           display: none;
         }
@@ -96,13 +103,17 @@ const TopNavbarWrapper = styled.div`
           display: block;
         }
         > div:first-child {
-          transform: translate(0, 4px);
+          //transform: translate(0, 4px);
         }
         > div:last-child {
           transform: translate(4px, -2px);
         }
       }
     }
+  }
+
+  .navbar-toggle {
+    display: none;
   }
 `;
 
@@ -115,9 +126,17 @@ interface TopNavbarProps {
 
 export default function TopNavbar(props: TopNavbarProps) {
   const { toHome, toFeatures, toInteroperability, toRoadmap } = props;
+  const [showDrawer, setShowDrawer] = React.useState<boolean>(false);
+
+  const doAndCloseDrawer = (toFunc: () => void) => {
+    return () => {
+      setTimeout(toFunc, 0);
+      setShowDrawer(false);
+    };
+  };
 
   return (
-    <TopNavbarWrapper>
+    <TopNavbarWrapper className="top-nav-bar">
       <div className="top-left">
         <div>
           <img src="./logo.png" alt="logo" />
@@ -148,6 +167,59 @@ export default function TopNavbar(props: TopNavbarProps) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="navbar-toggle">
+        <button
+          aria-label="Navigation bar toggle"
+          className="navbar__toggle clean-btn"
+          type="button"
+          onClick={() => setShowDrawer(true)}
+        >
+          <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
+            <line x1="1" y1="1" x2="27" y2="1" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <line x1="1" y1="7" x2="27" y2="7" stroke="white" strokeWidth="2" strokeLinecap="round" />
+            <line x1="1" y1="13" x2="27" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+        <SwipeableDrawer
+          anchor="right"
+          open={showDrawer}
+          onClose={() => setShowDrawer(false)}
+          onOpen={() => setShowDrawer(true)}
+          PaperProps={{
+            sx: { width: '70%', backgroundColor: '#4e3188' },
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '2rem', color: 'white' }}>
+            <CloseIcon onClick={() => setShowDrawer(false)} />
+          </div>
+          <div style={{ padding: '120px 50px' }}>
+            <Typography className="navbar-menu-item" sx={{ p: 2, color: 'white' }} onClick={doAndCloseDrawer(toHome)}>
+              Home
+            </Typography>
+            <Typography
+              className="navbar-menu-item"
+              sx={{ p: 2, color: 'white' }}
+              onClick={doAndCloseDrawer(toFeatures)}
+            >
+              Features
+            </Typography>
+            <Typography
+              className="navbar-menu-item"
+              sx={{ p: 2, color: 'white' }}
+              onClick={doAndCloseDrawer(toInteroperability)}
+            >
+              Interoperability
+            </Typography>
+            <Typography
+              className="navbar-menu-item"
+              sx={{ p: 2, color: 'white' }}
+              onClick={doAndCloseDrawer(toRoadmap)}
+            >
+              Roadmap
+            </Typography>
+          </div>
+        </SwipeableDrawer>
       </div>
     </TopNavbarWrapper>
   );
