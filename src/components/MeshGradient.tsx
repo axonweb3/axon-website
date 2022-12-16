@@ -17,10 +17,10 @@ export default function MeshGradient() {
   const ref = useRef(null);
 
   useEffect(() => {
-    console.log(ref.current);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const canvas = ref.current! as HTMLCanvasElement;
 
-    const game = new Phaser.Game({
+    new Phaser.Game({
       width: document.documentElement.clientWidth,
       height: document.documentElement.clientHeight,
       type: Phaser.CANVAS,

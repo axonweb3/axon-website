@@ -39,8 +39,12 @@ code {
 }
 
 .top-middle > div > a:hover,
-.top-link:hover {
+.top-link:hover > div {
   color: var(--top-a-hover-color);
+}
+
+.top-link:hover {
+  border-color: var(--top-a-hover-color);
 }
 
 @media (max-width: 1080px) {

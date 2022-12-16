@@ -42,7 +42,7 @@ const AppWrapper = styled.div`
     // TopNavbar
     .top-left {
       margin-left: 0;
-      > div {
+      > a {
         border-right: none !important;
         justify-content: flex-start;
         > img {
@@ -277,7 +277,7 @@ const AppWrapper = styled.div`
         margin-top: 30px;
         margin-bottom: 34px;
         flex-direction: column;
-        > div {
+        > a {
           margin: 22px;
         }
       }

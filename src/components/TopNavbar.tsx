@@ -27,8 +27,11 @@ const TopNavbarWrapper = styled.div`
     height: 100%;
     width: 300px;
 
-    > div {
+    > a {
       width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-right: solid #ffffff 1px;
 
       > img {
@@ -69,7 +72,6 @@ const TopNavbarWrapper = styled.div`
     > div {
       height: 54px;
       width: 100%;
-      color: #ffffff;
       font-size: 18px;
       font-weight: 700;
       font-style: normal;
@@ -80,6 +82,10 @@ const TopNavbarWrapper = styled.div`
       border-bottom-style: solid;
       border-bottom-width: 2px;
       padding-bottom: 1px;
+      text-decoration: none;
+      color: #ffffff;
+      display: flex;
+      cursor: default;
       > div {
         white-space: nowrap;
         transition: 0.6s;
@@ -138,9 +144,9 @@ export default function TopNavbar(props: TopNavbarProps) {
   return (
     <TopNavbarWrapper className="top-nav-bar">
       <div className="top-left">
-        <div>
+        <a>
           <img src="./logo.png" alt="logo" />
-        </div>
+        </a>
       </div>
       <div className="top-middle">
         <div>
@@ -155,7 +161,7 @@ export default function TopNavbar(props: TopNavbarProps) {
       </div>
       <div className="top-right">
         <div>
-          <div className="top-link">
+          <a className="top-link" href="https://docs.axonweb3.io/" target="_blank" rel="bookmark noreferrer">
             <div>Open Docsite</div>
             <div>
               <div className="light">
@@ -165,7 +171,7 @@ export default function TopNavbar(props: TopNavbarProps) {
                 <ArrowOutwardBlack />
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
       <div className="navbar-toggle">

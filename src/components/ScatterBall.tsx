@@ -17,7 +17,7 @@ export default function ScatterBall(props: { texture: string; diameter: number }
   const { texture, diameter } = props;
 
   useEffect(() => {
-    console.log(ref.current);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const canvas = ref.current! as HTMLCanvasElement;
     const width = document.documentElement.clientWidth * 0.2;
     const height = width;

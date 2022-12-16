@@ -107,6 +107,10 @@ const HomeWrapper = styled.div`
     border-bottom-style: solid;
     border-bottom-width: 2px;
     padding-bottom: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    cursor: default;
     > div {
       white-space: nowrap;
       transition: 0.6s;
@@ -182,7 +186,7 @@ export default function Home() {
         <div className="home-bottom">
           <div />
           <div>
-            <div className="home-link">
+            <a className="home-link" href="https://docs.axonweb3.io/" target="_blank" rel="bookmark noreferrer">
               <div>Open Docsite</div>
               <div>
                 <div className="light">
@@ -192,10 +196,10 @@ export default function Home() {
                   <ArrowOutwardBlack />
                 </div>
               </div>
-            </div>
+            </a>
           </div>
           <div>
-            <div className="home-link">
+            <a className="home-link" href="https://github.com/axonweb3/axon" target="_blank" rel="bookmark noreferrer">
               <div>Open in Github</div>
               <div>
                 <div className="light">
@@ -205,7 +209,7 @@ export default function Home() {
                   <ArrowOutwardBlack />
                 </div>
               </div>
-            </div>
+            </a>
           </div>
           <div />
         </div>

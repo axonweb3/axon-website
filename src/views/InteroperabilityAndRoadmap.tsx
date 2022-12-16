@@ -1,18 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { ArrowOutwardBlack, ArrowOutwardLight } from '../components/ArrowOutward';
+import { ArrowOutwardBlack } from '../components/ArrowOutward';
 import { DiscordCard, GithubCard, MediumCard, TwitterCard } from '../components/FindUsCards';
 import Interoperability from '../components/Interoperability';
-import {
-  DiscordLight,
-  DiscordDark,
-  GithubLight,
-  GithubDark,
-  MediumLight,
-  MediumDark,
-  TwitterLight,
-  TwitterDark,
-} from '../components/Logos';
+import { DiscordLight, GithubLight, MediumLight, TwitterLight } from '../components/Logos';
 import Roadmap from '../components/Roadmap';
 
 const InteroperabilityAndRoadmapWrapper = styled.div`
@@ -68,6 +59,10 @@ const InteroperabilityAndRoadmapWrapper = styled.div`
         border-bottom-style: solid;
         border-bottom-width: 2px;
         padding-bottom: 1px;
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        cursor: default;
         > div {
           white-space: nowrap;
           transition: 0.6s;
@@ -120,7 +115,7 @@ const InteroperabilityAndRoadmapWrapper = styled.div`
       margin-top: 50px;
       margin-bottom: 100px;
       width: 80%;
-      > div {
+      > a {
         width: 25%;
         margin: 10px;
       }
@@ -149,16 +144,23 @@ const InteroperabilityAndRoadmapWrapper = styled.div`
     }
     > div:nth-child(2) {
       flex: 1;
-      > svg {
-        margin: 21px;
+      > a {
+        > svg {
+          margin: 21px;
+        }
       }
     }
     > div:last-child {
       margin-right: 84px;
-      > img {
-        height: 54px;
+      > a {
+        > img {
+          height: 54px;
+        }
       }
     }
+  }
+  .none-pointer-events {
+    pointer-events: none;
   }
 `;
 
@@ -180,20 +182,25 @@ export default function InteroperabilityAndRoadmap() {
         <div>
           <div />
           <div>
-            <div className="join-us-link">
+            <a className="join-us-link" href="https://docs.axonweb3.io/" target="_blank" rel="bookmark noreferrer">
               <div>Open Docsite</div>
               <div>
                 <ArrowOutwardBlack />
               </div>
-            </div>
+            </a>
           </div>
           <div>
-            <div className="join-us-link">
+            <a
+              className="join-us-link"
+              href="https://github.com/axonweb3/axon"
+              target="_blank"
+              rel="bookmark noreferrer"
+            >
               <div>Open in Github</div>
               <div>
                 <ArrowOutwardBlack />
               </div>
-            </div>
+            </a>
           </div>
           <div />
         </div>
@@ -210,30 +217,40 @@ export default function InteroperabilityAndRoadmap() {
         {/*</div>*/}
         <div>Be a part of our Global Community By Participating in Open Discussions.</div>
         <div>
-          <div>
-            <DiscordCard />
-          </div>
-          <div>
+          <a href="https://github.com/axonweb3/axon" target="_blank" rel="bookmark noreferrer">
             <GithubCard />
-          </div>
-          <div>
+          </a>
+          <a href="https://medium.com/@axon_web3" target="_blank" rel="bookmark noreferrer">
             <MediumCard />
-          </div>
-          <div>
+          </a>
+          <a href="https://twitter.com/AxonWeb3" target="_blank" rel="bookmark noreferrer">
             <TwitterCard />
-          </div>
+          </a>
+          <a href="javascript:void(0)" className="none-pointer-events">
+            <DiscordCard />
+          </a>
         </div>
       </div>
       <div className="footer">
         <div>© Axon, Inc. 2022.</div>
         <div>
-          <DiscordLight />
-          <GithubLight />
-          <MediumLight />
-          <TwitterLight />
+          <a href="https://github.com/axonweb3/axon" target="_blank" rel="bookmark noreferrer">
+            <GithubLight />
+          </a>
+          <a href="https://medium.com/@axon_web3" target="_blank" rel="bookmark noreferrer">
+            <MediumLight />
+          </a>
+          <a href="https://twitter.com/AxonWeb3" target="_blank" rel="bookmark noreferrer">
+            <TwitterLight />
+          </a>
+          <a href="javascript:void(0)" className="none-pointer-events">
+            <DiscordLight />
+          </a>
         </div>
         <div>
-          <img src="./logo.png" alt="axon" />
+          <a>
+            <img src="./logo.png" alt="axon" />
+          </a>
         </div>
       </div>
     </InteroperabilityAndRoadmapWrapper>
