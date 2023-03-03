@@ -8,8 +8,8 @@ function Button(props: IButtonProps) {
   const { text } = props;
 
   return (
-    <div className="mr-6 bg-axon-theme px-6 py-2 rounded-full shadow-lg">
-      <span className="font-dunbar font-[860]">{text}</span>
+    <div className="mr-6 bg-axon-theme px-6 py-2 rounded-full shadow-lg cursor-pointer">
+      <span className="text-md 2xl:text-xl font-dunbar font-[860]">{text}</span>
     </div>
   );
 }
