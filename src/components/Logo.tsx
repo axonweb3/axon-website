@@ -1,9 +1,10 @@
 import React from 'react';
+import logoImage from '../assets/img/logo.png';
 
 function Logo() {
   return (
     <div>
-      <img src="/img/logo.png" />
+      <img src={logoImage} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/lodash-es': ^4.17.6
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
   '@typescript-eslint/eslint-plugin': 5.42.1
@@ -11,6 +12,7 @@ specifiers:
   eslint-plugin-react: 7.31.10
   eslint-plugin-react-hooks: ^4.6.0
   framer-motion: ^10.0.1
+  lodash-es: ^4.17.21
   postcss: ^8.4.21
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -21,11 +23,13 @@ specifiers:
 
 dependencies:
   framer-motion: registry.npmjs.org/framer-motion/10.0.1_biqbaboplfbrettd7655fr4n2y
+  lodash-es: registry.npmjs.org/lodash-es/4.17.21
   react: registry.npmjs.org/react/18.2.0
   react-dom: registry.npmjs.org/react-dom/18.2.0_react@18.2.0
   vite-plugin-fonts: registry.npmjs.org/vite-plugin-fonts/0.7.0_vite@4.1.4
 
 devDependencies:
+  '@types/lodash-es': registry.npmjs.org/@types/lodash-es/4.17.6
   '@types/react': registry.npmjs.org/@types/react/18.0.28
   '@types/react-dom': registry.npmjs.org/@types/react-dom/18.0.11
   '@typescript-eslint/eslint-plugin': registry.npmjs.org/@typescript-eslint/eslint-plugin/5.42.1_glfn436ucrnl7bm64vg3iu64fu
@@ -683,6 +687,20 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.11.tgz}
     name: '@types/json-schema'
     version: 7.0.11
+    dev: true
+
+  registry.npmjs.org/@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/lodash-es/-/lodash-es-4.17.6.tgz}
+    name: '@types/lodash-es'
+    version: 4.17.6
+    dependencies:
+      '@types/lodash': registry.npmjs.org/@types/lodash/4.14.191
+    dev: true
+
+  registry.npmjs.org/@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/lodash/-/lodash-4.14.191.tgz}
+    name: '@types/lodash'
+    version: 4.14.191
     dev: true
 
   registry.npmjs.org/@types/prop-types/15.7.5:
@@ -2243,6 +2261,12 @@ packages:
     dependencies:
       p-locate: registry.npmjs.org/p-locate/5.0.0
     dev: true
+
+  registry.npmjs.org/lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz}
+    name: lodash-es
+    version: 4.17.21
+    dev: false
 
   registry.npmjs.org/lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz}
