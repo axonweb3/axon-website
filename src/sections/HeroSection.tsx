@@ -2,8 +2,10 @@ import React from 'react';
 import Logo from '../components/Logo';
 import Button from '../components/Button';
 import Mask, { IMaskProps } from '../components/Mask';
+import { motion } from 'framer-motion';
 
-const MASK_TRANSITION = { ease: 'easeOut', duration: 1 };
+const HERO_TRANSITION = { ease: 'easeOut', duration: 1 };
+const BUTTON_TRANSITION = { duration: 0.3, delay: 0.7 };
 
 function HeroSection() {
   const topMaskAnimate: IMaskProps['animate'] = React.useCallback(
@@ -11,7 +13,7 @@ function HeroSection() {
       const top = containerRect.top;
       return {
         top,
-        transition: MASK_TRANSITION,
+        transition: HERO_TRANSITION,
       };
     },
     [],
@@ -22,7 +24,7 @@ function HeroSection() {
       const top = containerRect.bottom - maskRect.height;
       return {
         top,
-        transition: MASK_TRANSITION,
+        transition: HERO_TRANSITION,
       };
     },
     [],
@@ -31,7 +33,17 @@ function HeroSection() {
   return (
     <div className="relative w-screen h-screen bg-hero bg-cover flex justify-center">
       <div className="absolute top-0 left-0 flex flex-row justify-center items-center h-full z-0">
-        <img className="w-full lg:w-10/12 xl:w-9/12" src={'/img/brand.png'} />
+        <motion.img
+          className="w-full lg:w-10/12 xl:w-9/12"
+          src={'/img/brand.png'}
+          initial={{
+            scale: 0.1,
+          }}
+          animate={{
+            scale: 1,
+            transition: HERO_TRANSITION,
+          }}
+        />
       </div>
 
       <div className="relative w-full sm:w-10/12 md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-5/12 h-full z-20">
@@ -51,12 +63,16 @@ function HeroSection() {
         <Logo />
       </div>
       <div className="absolute top-0 left-0 w-full h-full z-30">
-        <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center z-30">
-          <div className="flex flex-row mb-12 xl:mb-16 2xl:mb-20">
+        <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center">
+          <motion.div
+            className="flex flex-row mb-12 xl:mb-16 2xl:mb-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
+          >
             <Button text="Open Docsite" />
             <div className="w-4" />
             <Button text="Open in GitHub" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
