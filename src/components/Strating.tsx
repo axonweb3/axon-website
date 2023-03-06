@@ -1,10 +1,4 @@
-import {
-  motion,
-  useAnimation,
-  useMotionValueEvent,
-  useScroll,
-} from 'framer-motion';
-import { throttle } from 'lodash-es';
+import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
 import startingImage from '../assets/img/starting.png';
 import React from 'react';
 
@@ -17,31 +11,24 @@ const startingVariants = {
 
 function Starting() {
   const control = useAnimation();
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(
-    scrollY,
-    'change',
-    throttle((latest) => {
-      if (latest < window.innerHeight) {
-        const rate = Math.min((latest / window.innerHeight) * 2, 1);
-        control.start({
-          opacity: rate,
-          scale: rate,
-          zIndex: rate > 0.8 ? 20 : 0,
-        });
-      }
-    }, 100),
-  );
+  const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const rate = useTransform(scrollYProgress, [1, 0.5], [0, 1]);
 
   return (
-    <motion.img
-      className="w-10/12 lg:w-8/12 xl:w-6/12"
-      src={startingImage}
-      variants={startingVariants}
-      initial="hidden"
-      animate={control}
-    />
+    <div className="flex flex-row justify-center z-20" ref={ref}>
+      <motion.img
+        className="w-10/12 lg:w-8/12 xl:w-6/12"
+        style={{
+          opacity: rate,
+          scale: rate,
+        }}
+        src={startingImage}
+        variants={startingVariants}
+        initial="hidden"
+        animate={control}
+      />
+    </div>
   );
 }
 

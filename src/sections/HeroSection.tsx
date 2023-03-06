@@ -5,7 +5,7 @@ import Mask, { IMaskProps } from '../components/Mask';
 import heroBackground from '../assets/img/hero-background.png';
 import topMaskImage from '../assets/img/top-mask.png';
 import bottomMaskImage from '../assets/img/bottom-mask.png';
-import { motion } from 'framer-motion';
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import Brand from '../components/Brand';
 import Starting from '../components/Strating';
 
@@ -14,6 +14,17 @@ const BUTTON_TRANSITION = { duration: 0.3, delay: 0.7 };
 
 function HeroSection() {
   const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const [scrollSnap, setScrollSnap] = React.useState(true);
+
+  React.useEffect(() => {
+    const $html = document.querySelector('html');
+    $html!.className = scrollSnap ? 'snap-y snap-mandatory scroll-smooth' : '';
+  }, [scrollSnap]);
+
+  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    setScrollSnap(progress !== 1);
+  });
 
   const topMaskAnimate: IMaskProps['animate'] = React.useCallback(
     (containerRect: DOMRect) => {
@@ -75,13 +86,13 @@ function HeroSection() {
       </div>
 
       <div style={{ marginTop: '-100vh' }} ref={ref}>
-        <section className="w-screen h-screen flex justify-center -mt-screen">
+        <section className="w-screen h-screen flex justify-center -mt-screen snap-center">
           <div className="flex flex-col h-full justify-center items-center">
             <Brand />
           </div>
         </section>
         <section
-          className="w-screen h-screen flex justify-center"
+          className="w-screen h-screen flex justify-center snap-center"
           style={{ marginTop: '-50vh' }}
         >
           <div className="flex flex-col h-full w-full justify-center items-center">

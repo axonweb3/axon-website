@@ -1,11 +1,10 @@
 import React from 'react';
 import brandImage from '../assets/img/brand.png';
-import { throttle } from 'lodash-es';
 import {
   motion,
   useAnimation,
   useScroll,
-  useMotionValueEvent,
+  useTransform,
 } from 'framer-motion';
 
 const brandVariants = {
@@ -22,32 +21,28 @@ const brandVariants = {
 
 function Brand() {
   const control = useAnimation();
-  const { scrollY } = useScroll();
+  const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const rate = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
   React.useEffect(() => {
     control.start('visible');
   }, [control]);
 
-  useMotionValueEvent(
-    scrollY,
-    'change',
-    throttle((latest) => {
-      const rate = Math.max(1 - latest / window.innerHeight, 0);
-      control.start({
-        opacity: rate,
-        scale: rate,
-      });
-    }, 100),
-  );
-
   return (
-    <motion.img
-      className="w-full lg:w-10/12 xl:w-9/12"
-      src={brandImage}
-      variants={brandVariants}
-      initial="hidden"
-      animate={control}
-    />
+    <div className="flex flex-row justify-center z-20" ref={ref}>
+      <motion.img
+        className="w-full lg:w-10/12 xl:w-9/12"
+        style={{
+          opacity: rate,
+          scale: rate,
+        }}
+        src={brandImage}
+        variants={brandVariants}
+        initial="hidden"
+        animate={control}
+      />
+    </div>
   );
 }
 
