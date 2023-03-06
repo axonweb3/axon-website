@@ -1,5 +1,5 @@
 import React from 'react';
-import brandImage from '../assets/img/brand.png';
+import brandImage from '../assets/img/webp/brand.webp';
 import {
   motion,
   useAnimation,

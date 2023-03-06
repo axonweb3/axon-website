@@ -1,5 +1,5 @@
 import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
-import startingImage from '../assets/img/starting.png';
+import startingImage from '../assets/img/webp/starting.webp';
 import React from 'react';
 
 const startingVariants = {

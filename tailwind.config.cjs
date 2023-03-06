@@ -9,9 +9,6 @@ module.exports = {
       colors: {
         'axon-theme': '#F9ED56',
       },
-      backgroundImage: {
-        hero: "url('/img/hero-background.png')",
-      }
     },
   },
   plugins: [],

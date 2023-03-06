@@ -1,7 +1,7 @@
 import React from 'react';
 import featuresConfig, { IFeature } from '../features-config';
-import featuresBackground from '../assets/img/features-background.png';
-import featureTitle from '../assets/img/features-title.png';
+import featuresBackground from '../assets/img/webp/features-background.webp';
+import featureTitle from '../assets/img/webp/features-title.webp';
 
 function FeaturesSection() {
   return (

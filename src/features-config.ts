@@ -1,7 +1,7 @@
-import universalAbstractionImage from './assets/img/universal-abstraction.png';
-import developerFriendlyImage from './assets/img/developer-friendly.png';
-import nativeInteroperabilityImage from './assets/img/native-interoperability.png';
-import highPerformanceImage from './assets/img/high-performance.png';
+import universalAbstractionImage from './assets/img/webp/universal-abstraction.webp';
+import developerFriendlyImage from './assets/img/webp/developer-friendly.webp';
+import nativeInteroperabilityImage from './assets/img/webp/native-interoperability.webp';
+import highPerformanceImage from './assets/img/webp/high-performance.webp';
 
 export interface IFeature {
   title: string;

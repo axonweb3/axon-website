@@ -1,6 +1,7 @@
 import React from 'react';
-import FeaturesSection from './sections/FeaturesSection';
 import HeroSection from './sections/HeroSection';
+
+const FeaturesSection = React.lazy(() => import('./sections/FeaturesSection'));
 
 function App() {
   React.useEffect(() => {
@@ -12,7 +13,9 @@ function App() {
   return (
     <div className="App">
       <HeroSection />
-      <FeaturesSection />
+      <React.Suspense fallback={null}>
+        <FeaturesSection />
+      </React.Suspense>
     </div>
   );
 }
