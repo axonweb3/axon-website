@@ -50,7 +50,7 @@ function HeroSection() {
 
   return (
     <div
-      className={`relative bg-cover bg-fixed`}
+      className={`relative bg-cover sm:bg-fixed`}
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
       <div className="sticky top-0 w-screen h-screen flex justify-center">
