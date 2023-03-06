@@ -53,7 +53,7 @@ function HeroSection() {
       className={`relative bg-cover bg-fixed`}
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
-      <div className="sticky top-0 w-screen h-screen flex justify-center z-10">
+      <div className="sticky top-0 w-screen h-screen flex justify-center">
         <div className="absolute top-0 sm:w-10/12 md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-5/12 h-full">
           <Mask
             src={topMaskImage}
@@ -70,18 +70,17 @@ function HeroSection() {
         <div className="absolute top-0 left-0 w-3/12 md:w-2/12">
           <Logo />
         </div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center">
-            <motion.div
-              className="flex flex-row mb-12 xl:mb-16 2xl:mb-20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
-            >
-              <Button text="Open Docsite" />
-              <div className="w-4" />
-              <Button text="Open in GitHub" />
-            </motion.div>
-          </div>
+
+        <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center z-20">
+          <motion.div
+            className="flex flex-row mb-12 xl:mb-16 2xl:mb-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
+          >
+            <Button text="Open Docsite" />
+            <div className="w-4" />
+            <Button text="Open in GitHub" />
+          </motion.div>
         </div>
       </div>
 
