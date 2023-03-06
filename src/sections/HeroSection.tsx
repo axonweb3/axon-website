@@ -54,7 +54,7 @@ function HeroSection() {
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
       <div className="sticky top-0 w-screen h-screen flex justify-center">
-        <div className="absolute top-0 sm:w-10/12 md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-5/12 h-full">
+        <div className="absolute top-0 w-full sm:w-10/12 md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-5/12 h-full">
           <Mask
             src={topMaskImage}
             containerClassName="absolute top-0 h-full w-full flex flex-col justify-center"

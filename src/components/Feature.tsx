@@ -36,21 +36,21 @@ function Feature(props: IFeatureProps) {
 
   return (
     <motion.div
-      className={`flex items-center ${
-        index % 2 === 0 ? `flex-row` : `flex-row-reverse`
+      className={`flex items-center flex-col mb-8 sm:mb-0 ${
+        index % 2 === 0 ? `sm:flex-row-reverse` : `sm:flex-row`
       }`}
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.6 }}
     >
+      <motion.div className="w-2/3 sm:w-full mb-4 sm:mb-0 basis-5/12" variants={imageVariants}>
+        <img src={feature.image} />
+      </motion.div>
       <motion.div className="basis-7/12 px-8" variants={descriptVariants}>
         <div className="border-b-2 border-axon-theme mb-4">
           <h2 className="text-xl font-bold">{feature.title}</h2>
         </div>
         <p>{feature.description}</p>
-      </motion.div>
-      <motion.div className="basis-5/12" variants={imageVariants}>
-        <img src={feature.image} />
       </motion.div>
     </motion.div>
   );

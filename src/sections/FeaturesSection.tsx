@@ -16,7 +16,7 @@ function FeaturesSection() {
           <img className="w-96" src={featureTitle} />
         </div>
         <div className="flex flex-row justify-center">
-          <div className="container pt-32 px-64 2xl:px-72">
+          <div className="container pt-10 sm:pt-32 w-full sm:w-10/12 lg:w-9/12 xl:w-7/12 2xl:w-5/12">
             {featuresConfig.map((feature: IFeature, index: number) => {
               return (
                 <Feature feature={feature} index={index} key={feature.title} />
