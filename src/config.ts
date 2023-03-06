@@ -2,6 +2,10 @@ import universalAbstractionImage from './assets/img/webp/universal-abstraction.w
 import developerFriendlyImage from './assets/img/webp/developer-friendly.webp';
 import nativeInteroperabilityImage from './assets/img/webp/native-interoperability.webp';
 import highPerformanceImage from './assets/img/webp/high-performance.webp';
+import discordIcon from './assets/img/webp/discord.webp';
+import githubIcon from './assets/img/webp/github.webp';
+import mediumIcon from './assets/img/webp/medium.webp';
+import twitterIcon from './assets/img/webp/twitter.webp';
 
 export interface IFeature {
   title: string;
@@ -9,7 +13,7 @@ export interface IFeature {
   image: string;
 }
 
-const features: IFeature[] = [
+export const features: IFeature[] = [
   {
     title: 'Universal Abstraction',
     description:
@@ -36,4 +40,31 @@ const features: IFeature[] = [
   },
 ];
 
-export default features;
+export interface ILink {
+  name: string;
+  link: string;
+  icon: string;
+}
+
+export const links: ILink[] = [
+  {
+    name: 'Discord',
+    link: 'https://discord.com',
+    icon: discordIcon,
+  },
+  {
+    name: 'GitHub',
+    link: 'https://github.com',
+    icon: githubIcon,
+  },
+  {
+    name: 'Medium',
+    link: 'https://medium.com',
+    icon: mediumIcon,
+  },
+  {
+    name: 'Twitter',
+    link: 'https://twitter.com',
+    icon: twitterIcon,
+  },
+];

@@ -1,6 +1,6 @@
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
-import { IFeature } from '../features-config';
+import { IFeature } from '../config';
 
 export interface IFeatureProps {
   feature: IFeature;
@@ -9,24 +9,20 @@ export interface IFeatureProps {
 
 const descriptVariants: Variants = {
   offscreen: {
-    y: -20,
     opacity: 0,
   },
   onscreen: {
     opacity: 1,
-    y: 0,
     transition: { ease: 'easeOut', duration: 1, delay: 0.2 },
   },
 };
 
 const imageVariants: Variants = {
   offscreen: {
-    y: -20,
     opacity: 0,
   },
   onscreen: {
     opacity: 1,
-    y: 0,
     transition: { ease: 'easeOut', duration: 1 },
   },
 };
@@ -43,9 +39,9 @@ function Feature(props: IFeatureProps) {
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.6 }}
     >
-      <motion.div className="w-2/3 sm:w-full mb-4 sm:mb-0 basis-5/12" variants={imageVariants}>
+      <div className="w-1/2 sm:w-full mb-4 sm:mb-0 basis-5/12">
         <img src={feature.image} />
-      </motion.div>
+      </div>
       <motion.div className="basis-7/12 px-8" variants={descriptVariants}>
         <div className="border-b-2 border-axon-theme mb-4">
           <h2 className="text-xl font-bold">{feature.title}</h2>

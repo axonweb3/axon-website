@@ -1,5 +1,6 @@
 import React from 'react';
 import FeaturesSection from './sections/FeaturesSection';
+import FindUsSection from './sections/FindUsSection';
 import HeroSection from './sections/HeroSection';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <HeroSection />
       <FeaturesSection />
+      <FindUsSection />
     </div>
   );
 }
