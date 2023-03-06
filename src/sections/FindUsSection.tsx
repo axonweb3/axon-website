@@ -23,7 +23,7 @@ function FindUsSection() {
       <div className="container w-full sm:w-10/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12 px-6 sm:px-4">
         <div className="grid grid-rows-2 grid-cols-2 md:grid-cols-4 gap-6 pt-10">
           {links.map((link) => {
-            return <Link data={link} key={link.name} />;
+            return <Link item={link} key={link.name} />;
           })}
         </div>
       </div>
