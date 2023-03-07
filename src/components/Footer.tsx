@@ -5,10 +5,10 @@ import Logo from './Logo';
 function Footer() {
   return (
     <footer className="py-6 px-4 md:pl-10 flex flex-row justify-between items-center">
-      <div className="w-[12%]">
+      <div className="w-1/2 sm:w-1/3">
         <span className="tracking-wide">&copy; Axon, Inc. 2023.</span>
       </div>
-      <div className="grid grid-cols-4 gap-2 w-1/4">
+      <div className="hidden md:grid md:grid-cols-4 gap-2 w-1/4">
         {links.map((item) => {
           return (
             <div className="flex flex-row justify-center" key={item.name}>
@@ -19,8 +19,10 @@ function Footer() {
           );
         })}
       </div>
-      <div className="w-[12%]">
+      <div className="w-1/2 sm:w-1/3 flex flex-row-reverse">
+        <div className="w-1/2">
         <Logo />
+        </div>
       </div>
     </footer>
   );
