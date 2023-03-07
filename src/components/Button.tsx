@@ -8,8 +8,8 @@ function Button(props: IButtonProps) {
   const { text } = props;
 
   return (
-    <div className="mr-6 bg-axon-theme px-6 py-2 rounded-full shadow-lg cursor-pointer">
-      <span className="text-md 2xl:text-xl font-dunbar font-[860] tracking-[0.1px]">{text}</span>
+    <div className="flex flex-row justify-center px-6 py-3 bg-axon-theme rounded-full shadow-lg cursor-pointer w-40 sm:w-44 2xl:w-48">
+      <span className="text-sm sm:text-lg 2xl:text-xl font-dunbar font-[860] tracking-[0.1px]">{text}</span>
     </div>
   );
 }

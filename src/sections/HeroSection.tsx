@@ -78,7 +78,7 @@ function HeroSection() {
             animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
           >
             <Button text="Open Docsite" />
-            <div className="w-4" />
+            <div className="w-6 2xl:w-8" />
             <Button text="Open in GitHub" />
           </motion.div>
         </div>
