@@ -18,6 +18,8 @@ function Link(props: ILinkProps) {
           <img
             className="h-8 md:h-6 lg:h-8 2xl:h-9 mr-2 2xl:mr-4"
             src={item.icon}
+            loading="lazy"
+            decoding="async"
           />
           <span className="font-bold">{item.name}</span>
         </div>

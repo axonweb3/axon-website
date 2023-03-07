@@ -1,8 +1,9 @@
 import React from 'react';
 import Footer from './components/Footer';
-import FeaturesSection from './sections/FeaturesSection';
-import FindUsSection from './sections/FindUsSection';
 import HeroSection from './sections/HeroSection';
+
+const FeaturesSection = React.lazy(() => import('./sections/FeaturesSection'));
+const FindUsSection = React.lazy(() => import('./sections/FindUsSection'));
 
 function App() {
   React.useEffect(() => {
@@ -15,8 +16,10 @@ function App() {
     <>
       <main>
         <HeroSection />
-        <FeaturesSection />
-        <FindUsSection />
+        <React.Suspense fallback={null}>
+          <FeaturesSection />
+          <FindUsSection />
+        </React.Suspense>
       </main>
       <Footer />
     </>
