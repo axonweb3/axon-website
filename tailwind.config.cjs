@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        dunbar: ['Dunbar Tall'],
+        'dunbar-tall': ['Dunbar Tall'],
+        'neue-kabel': ['Neue Kabel']
       },
       colors: {
         'axon-theme': '#F9ED56',
