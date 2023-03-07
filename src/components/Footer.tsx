@@ -20,7 +20,7 @@ function Footer() {
         })}
       </div>
       <div className="w-1/2 sm:w-1/3 flex flex-row-reverse">
-        <div className="w-1/2">
+        <div className="w-1/2 xl:w-1/4">
         <Logo />
         </div>
       </div>
