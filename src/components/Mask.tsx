@@ -33,13 +33,13 @@ function Mask(props: IMaskProps) {
     return controls.stop;
   }, [controls, animate]);
 
-  React.useEffect(() => {
-    const listener = () => startAnimate({ duration: 0 });
-    window.addEventListener('resize', listener);
-    return () => {
-      window.removeEventListener('resize', listener);
-    };
-  }, [startAnimate]);
+  // React.useEffect(() => {
+  //   const listener = () => startAnimate({ duration: 0 });
+  //   window.addEventListener('resize', listener);
+  //   return () => {
+  //     window.removeEventListener('resize', listener);
+  //   };
+  // }, [startAnimate]);
 
   React.useEffect(() => {
     if (!loaded) {
@@ -47,7 +47,7 @@ function Mask(props: IMaskProps) {
     }
     const stop = startAnimate();
     return stop;
-  }, [loaded, startAnimate]);
+  }, [loaded]);
 
   return (
     <div className={containerClassName} ref={containerRef}>
