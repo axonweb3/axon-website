@@ -33,7 +33,7 @@ export const features: IFeature[] = [
     image: nativeInteroperabilityImage,
   },
   {
-    title: 'high Performance',
+    title: 'High Performance',
     description:
       'Axon‘s optimized Byzantine Fault Tolerance algorithm enables over 3000 TPS (tested 1000+ TPS on Uniswap V3) with fast transaction finality.',
     image: highPerformanceImage,

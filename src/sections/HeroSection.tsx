@@ -54,10 +54,10 @@ function HeroSection() {
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
       <div className="sticky top-0 w-screen h-screen flex justify-center">
-        <div className="absolute top-0 w-full sm:w-10/12 md:w-8/12 lg:w-8/12 xl:w-6/12 2xl:w-5/12 h-full">
+        <div className="absolute top-0 w-full sm:w-9/12 md:w-7/12 lg:w-7/12 xl:w-5/12 2xl:w-4/12 h-full">
           <Mask
             src={topMaskImage}
-            containerClassName="absolute top-0 h-full w-full flex flex-col justify-center"
+            containerClassName="absolute top-6 sm:top-0 h-full w-full flex flex-col justify-center"
             animate={topMaskAnimate}
           />
           <Mask
@@ -67,18 +67,20 @@ function HeroSection() {
           />
         </div>
 
-        <div className="absolute top-0 left-0 w-3/12 md:w-2/12">
-          <Logo />
+        <div className="absolute top-0 left-0 flex flex-row w-full bg-white sm:bg-transparent bg-opacity-75">
+          <div className="w-3/12 md:w-2/12">
+            <Logo />
+          </div>
         </div>
 
         <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center z-20">
           <motion.div
-            className="flex flex-row mb-12 xl:mb-16 2xl:mb-20"
+            className="flex flex-col sm:flex-row mb-10 sm:mb-12 xl:mb-16 2xl:mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
           >
             <Button text="Open Docsite" />
-            <div className="w-6 2xl:w-8" />
+            <div className="w-6 h-4 2xl:w-8" />
             <Button text="Open in GitHub" />
           </motion.div>
         </div>
@@ -86,7 +88,7 @@ function HeroSection() {
 
       <div style={{ marginTop: '-100vh' }} ref={ref}>
         <section className="w-screen h-screen flex justify-center -mt-screen snap-center">
-          <div className="flex flex-col h-full justify-center items-center">
+          <div className="flex flex-col h-full justify-center items-center pt-8 sm:pt-0">
             <Brand />
           </div>
         </section>
@@ -94,7 +96,7 @@ function HeroSection() {
           className="w-screen h-screen flex justify-center snap-center"
           style={{ marginTop: '-50vh' }}
         >
-          <div className="flex flex-col h-full w-full justify-center items-center">
+          <div className="flex flex-col h-full w-full justify-center items-center pt-8 sm:pt-0">
             <Starting />
           </div>
         </section>
