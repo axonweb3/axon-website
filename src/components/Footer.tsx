@@ -8,12 +8,12 @@ function Footer() {
       <div className="w-1/2 sm:w-1/3">
         <span className="tracking-wide">&copy; Axon, Inc. 2023.</span>
       </div>
-      <div className="hidden md:grid md:grid-cols-4 gap-2 w-1/4">
+      <div className="hidden md:grid md:grid-cols-4 gap-2 w-1/4 2xl:w-2/12">
         {links.map((item) => {
           return (
             <div className="flex flex-row justify-center" key={item.name}>
               <a href={item.link}>
-                <img className="h-9" src={item.icon} />
+                <img className="h-8" src={item.icon} />
               </a>
             </div>
           );
