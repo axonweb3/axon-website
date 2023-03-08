@@ -53,7 +53,9 @@ function Link(props: ILinkProps) {
             />
             <span className="font-bold">{item.name}</span>
           </div>
-          <img className="h-4 2xl:h-5" src={learnMoreImage} />
+          <div>
+            <img className="h-4 2xl:h-5" src={learnMoreImage} />
+          </div>
         </div>
       </a>
     </motion.div>
