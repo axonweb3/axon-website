@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'dunbar-tall': ['Dunbar Tall'],
+        'dunbar-tall': ['dunbar-tall'],
         'neue-kabel': ['neue-kabel'],
         'alfarn-2': ['alfarn-2'],
       },

@@ -51,7 +51,7 @@ function Link(props: ILinkProps) {
               loading="lazy"
               decoding="async"
             />
-            <span className="font-bold">{item.name}</span>
+            <span className="font-alfarn-2 font-bold">{item.name}</span>
           </div>
           <div>
             <img className="h-4 2xl:h-5" src={learnMoreImage} />
