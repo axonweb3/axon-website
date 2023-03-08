@@ -19,7 +19,7 @@ function HeroSection() {
 
   React.useEffect(() => {
     const $html = document.querySelector('html');
-    $html!.className = scrollSnap ? 'snap-y snap-mandatory scroll-smooth' : '';
+    $html!.className = scrollSnap ? 'sm:snap-y sm:snap-mandatory sm:scroll-smooth' : '';
   }, [scrollSnap]);
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
