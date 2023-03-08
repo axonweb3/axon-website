@@ -27,10 +27,9 @@ function HeroSection() {
   });
 
   const topMaskAnimate: IMaskProps['animate'] = React.useCallback(
-    (containerRect: DOMRect) => {
-      const top = containerRect.top;
+    () => {
       return {
-        top,
+        top: 0,
         transition: HERO_TRANSITION,
       };
     },
@@ -54,20 +53,20 @@ function HeroSection() {
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
       <div className="sticky top-0 w-screen h-screen flex justify-center">
-        <div className="absolute top-0 w-full sm:w-9/12 md:w-7/12 lg:w-7/12 xl:w-5/12 2xl:w-4/12 h-full">
+        <div className="absolute top-12 sm:top-0 w-full sm:w-9/12 md:w-7/12 lg:w-7/12 xl:w-5/12 2xl:w-4/12 h-full">
           <Mask
             src={topMaskImage}
-            containerClassName="absolute top-6 sm:top-0 h-full w-full flex flex-col justify-center"
+            containerClassName="absolute top-0 h-full w-full flex flex-col justify-center"
             animate={topMaskAnimate}
           />
           <Mask
             src={bottomMaskImage}
-            containerClassName="absolute top-0 h-full w-full flex flex-col justify-center"
+            containerClassName="absolute -top-12 sm:top-0 h-full w-full flex flex-col justify-center"
             animate={bottomMaskAnimate}
           />
         </div>
 
-        <div className="absolute top-0 left-0 flex flex-row w-full bg-white sm:bg-transparent bg-opacity-75">
+        <div className="absolute top-0 left-0 flex flex-row items-center w-full h-12 sm:h-auto bg-white sm:bg-transparent bg-opacity-75">
           <div className="w-3/12 md:w-2/12">
             <Logo />
           </div>
