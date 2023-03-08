@@ -54,7 +54,7 @@ export const links: ILink[] = [
   },
   {
     name: 'GitHub',
-    link: 'https://github.com',
+    link: 'https://github.com/axonweb3',
     icon: githubIcon,
   },
   {
@@ -64,7 +64,7 @@ export const links: ILink[] = [
   },
   {
     name: 'Twitter',
-    link: 'https://twitter.com',
+    link: 'https://twitter.com/AxonWeb3',
     icon: twitterIcon,
   },
 ];
