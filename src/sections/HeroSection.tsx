@@ -78,9 +78,9 @@ function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
           >
-            <Button text="Open Docsite" />
+            <Button text="Open Docsite" href="https://docs.axonweb3.io/" />
             <div className="w-6 h-4 2xl:w-8" />
-            <Button text="Open in GitHub" />
+            <Button text="Open in GitHub" href="https://github.com/axonweb3" />
           </motion.div>
         </div>
       </div>

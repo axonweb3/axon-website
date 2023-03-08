@@ -32,9 +32,8 @@ function Feature(props: IFeatureProps) {
 
   return (
     <motion.div
-      className={`flex items-center flex-col-reverse mb-8 sm:mb-0 ${
-        index % 2 === 0 ? `sm:flex-row-reverse` : `sm:flex-row`
-      }`}
+      className={`flex items-center flex-col-reverse mb-8 sm:mb-0
+      ${index % 2 === 0 ? `sm:flex-row-reverse` : `sm:flex-row`}`}
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.6 }}
@@ -47,7 +46,10 @@ function Feature(props: IFeatureProps) {
           variants={imageVariants}
         />
       </div>
-      <motion.div className="basis-7/12 px-16 sm:px-8 z-30" variants={descriptVariants}>
+      <motion.div
+        className="basis-7/12 py-10 px-20 sm:py-6 sm:px-12 z-30 backdrop-blur-[1px] bg-white bg-opacity-30 rounded-md"
+        variants={descriptVariants}
+      >
         <div className="border-b-2 border-axon-theme mb-4">
           <h2 className="text-xl font-bold">{feature.title}</h2>
         </div>

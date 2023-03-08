@@ -39,7 +39,8 @@ function Brand() {
         animate={control}
       >
         <img className="w-8/12 sm:w-7/12 md:w-5/12 lg:w-5/12 xl:w-4/12 mb-2" src={brandImage} />
-        <p className="w-10/12 sm:w-8/12 md:w-6/12 xl:w-4/12 text-center text-[20px] font-medium font-neue-kabel z-30">
+        <p className="w-10/12 sm:w-8/12 md:w-6/12 xl:w-4/12 text-center text-[20px] font-medium font-neue-kabel z-30
+        backdrop-blur-[2px] bg-white bg-opacity-30 rounded-md">
           Axon is a layer 2 framework built on CKB aims to unleash the power of
           app-chain future.
         </p>
