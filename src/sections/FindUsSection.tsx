@@ -15,7 +15,7 @@ function FindUsSection() {
           className="w-9/12 sm:w-6/12 md:w-5/12 xl:w-4/12 2xl:w-5/12"
           src={findUsTitle}
         />
-        <p className="text-[#0A0607] font-medium my-6 text-center">
+        <p className="text-[#0A0607] font-neue-kabel font-medium my-6 text-center">
           Be a part of our Global Community By Participating in Open
           Discussions.
         </p>

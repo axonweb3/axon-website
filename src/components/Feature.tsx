@@ -51,14 +51,14 @@ function Feature(props: IFeatureProps) {
         variants={descriptVariants}
       >
         <div className="border-b-2 border-axon-theme mb-4">
-          <h2 className="text-xl font-bold">{feature.title}</h2>
+          <h2 className="text-xl font-alfarn-2 font-bold">{feature.title}</h2>
         </div>
-        <p className="relative font-serif">
-          <span className="absolute -left-12 -top-3 text-7xl text-axon-theme">
+        <p className="relative font-neue-kabel font-medium">
+          <span className="absolute -left-12 -top-3 text-7xl text-axon-theme font-serif">
             “
           </span>
           {feature.description}
-          <span className="absolute -right-10 -bottom-12 text-7xl text-axon-theme">
+          <span className="absolute -right-10 -bottom-12 text-7xl text-axon-theme font-serif">
             ”
           </span>
         </p>
