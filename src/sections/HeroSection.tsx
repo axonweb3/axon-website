@@ -92,7 +92,7 @@ function HeroSection() {
           </div>
         </section>
         <section
-          className="w-screen h-screen flex justify-center snap-center"
+          className="w-screen h-screen hidden sm:flex justify-center snap-center"
           style={{ marginTop: '-50vh' }}
         >
           <div className="flex flex-col h-full w-full justify-center items-center pt-8 sm:pt-0">

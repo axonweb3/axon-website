@@ -20,6 +20,7 @@ specifiers:
   svgo: ^3.0.2
   tailwindcss: ^3.2.7
   typescript: ^4.9.3
+  use-screen-size: ^1.1.0
   vite: ^4.1.0
   vite-plugin-fonts: ^0.7.0
   vite-plugin-image-optimizer: ^1.1.0
@@ -29,6 +30,7 @@ dependencies:
   lodash-es: registry.npmjs.org/lodash-es/4.17.21
   react: registry.npmjs.org/react/18.2.0
   react-dom: registry.npmjs.org/react-dom/18.2.0_react@18.2.0
+  use-screen-size: registry.npmjs.org/use-screen-size/1.1.0_react@18.2.0
   vite-plugin-fonts: registry.npmjs.org/vite-plugin-fonts/0.7.0_vite@4.1.4
 
 devDependencies:
@@ -3576,6 +3578,18 @@ packages:
     dependencies:
       punycode: registry.npmjs.org/punycode/2.3.0
     dev: true
+
+  registry.npmjs.org/use-screen-size/1.1.0_react@18.2.0:
+    resolution: {integrity: sha512-GmHD1guO2+t5XZ1M8w/H7hlC1CO6IsD3lz1l9o+mKpmZfcm27cHKDw0J5kkj5sy3WT3hZAtno6pVaI3lRzDszA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/use-screen-size/-/use-screen-size-1.1.0.tgz}
+    id: registry.npmjs.org/use-screen-size/1.1.0
+    name: use-screen-size
+    version: 1.1.0
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.0.0
+    dependencies:
+      react: registry.npmjs.org/react/18.2.0
+    dev: false
 
   registry.npmjs.org/util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz}

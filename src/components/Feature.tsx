@@ -1,5 +1,6 @@
 import { motion, Variants } from 'framer-motion';
 import React from 'react';
+import useScreenSize from 'use-screen-size';
 import { IFeature } from '../config';
 
 export interface IFeatureProps {
@@ -29,13 +30,14 @@ const imageVariants: Variants = {
 
 function Feature(props: IFeatureProps) {
   const { feature, index } = props;
+  const size = useScreenSize();
 
   return (
     <motion.div
       className={`flex items-center flex-col-reverse mb-8 sm:mb-0
       ${index % 2 === 0 ? `sm:flex-row-reverse` : `sm:flex-row`}`}
-      initial="offscreen"
-      whileInView="onscreen"
+      initial={size.screen === 'xs' ? 'onscreen' : 'offscreen'}
+      whileInView={size.screen === 'xs' ? undefined : 'onscreen'}
       viewport={{ once: true, amount: 0.6 }}
     >
       <div className="w-1/2 sm:w-full mb-4 sm:mb-0 basis-5/12 -mt-10">
