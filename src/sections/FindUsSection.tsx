@@ -11,7 +11,7 @@ function FindUsSection() {
       style={{ backgroundImage: `url(${findUsBackground})` }}
     >
       <div className="flex flex-col items-center pt-16 px-6">
-        <img className="h-[80px]" src={findUsTitle} />
+        <img className="h-[115px]" src={findUsTitle} />
         <p className="text-[#0A0607] font-neue-kabel font-medium my-6 text-center">
           Be a part of our Global Community By Participating in Open
           Discussions.

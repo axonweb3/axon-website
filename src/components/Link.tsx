@@ -9,7 +9,7 @@ export interface ILinkProps {
   item: ILink;
 }
 
-const variants = {
+const backgroundVariants = {
   visible: {
     opacity: 1,
   },
@@ -19,14 +19,25 @@ const variants = {
   },
 };
 
+const letterVariants = {
+  hover: {
+    letterSpacing: '1px',
+  },
+  default: {
+    letterSpacing: '0px',
+  },
+};
+
 function Link(props: ILinkProps) {
   const { item } = props;
   const [hover, setHover] = React.useState(false);
-  const controls = useAnimationControls();
+  const backgroundControls = useAnimationControls();
+  const letterControls = useAnimationControls();
 
   React.useEffect(() => {
-    controls.start(hover ? 'visible' : 'hidden');
-  }, [hover, controls]);
+    backgroundControls.start(hover ? 'visible' : 'hidden');
+    letterControls.start(hover ? 'hover' : 'default');
+  }, [hover, backgroundControls, letterControls]);
 
   return (
     <m.div
@@ -40,8 +51,8 @@ function Link(props: ILinkProps) {
           className="absolute top-0 left-0 opacity-0"
           src={linkHoverBackground}
           initial="hidden"
-          variants={variants}
-          animate={controls}
+          variants={backgroundVariants}
+          animate={backgroundControls}
         />
         <div className="absolute top-0 left-0 h-full flex flex-col justify-between p-8">
           <div className="flex flex-row items-center h-[40px]">
@@ -55,9 +66,17 @@ function Link(props: ILinkProps) {
               {item.name}
             </span>
           </div>
-          <div>
-            <img className="w-[122px]" src={learnMoreImage} />
-          </div>
+          <m.div
+            className="flex flex-row items-center"
+            initial="default"
+            variants={letterVariants}
+            animate={letterControls}
+          >
+            <span className="font-neue-kabel font-medium text-[16px]">
+              Learn More
+            </span>
+            <img className="ml-3 w-[14px] h-[14px]" src={learnMoreImage} />
+          </m.div>
         </div>
       </a>
     </m.div>
