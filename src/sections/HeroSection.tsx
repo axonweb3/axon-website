@@ -37,10 +37,9 @@ function HeroSection() {
   );
 
   const bottomMaskAnimate: IMaskProps['animate'] = React.useCallback(
-    (_, maskRect: DOMRect) => {
-      const top = window.innerHeight - maskRect.height;
+    () => {
       return {
-        top,
+        bottom: 0,
         transition: HERO_TRANSITION,
       };
     },
