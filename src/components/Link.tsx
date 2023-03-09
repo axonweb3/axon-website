@@ -43,8 +43,8 @@ function Link(props: ILinkProps) {
           variants={variants}
           animate={controls}
         />
-        <div className="absolute top-0 left-0 h-full flex flex-col justify-between p-6">
-          <div className="flex flex-row items-center">
+        <div className="absolute top-0 left-0 h-full flex flex-col justify-between p-8">
+          <div className="flex flex-row items-center h-[40px]">
             <img
               className="w-[40px] mr-2"
               src={item.icon}
