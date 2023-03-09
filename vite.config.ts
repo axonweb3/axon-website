@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePluginFonts } from 'vite-plugin-fonts';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,9 +12,6 @@ export default defineConfig({
         defer: true,
         injectTo: 'head-prepend',
       },
-    }),
-    ViteImageOptimizer({
-      /* pass your config */
     }),
   ],
 });
