@@ -10,7 +10,7 @@ function FeaturesSection() {
 
   return (
     <div
-      className={`bg-contain pb-20`}
+      className={`bg-contain pb-6 sm:pb-20`}
       style={{
         backgroundImage:
           size.screen === 'xs' ? '' : `url(${featuresBackground})`,
@@ -20,7 +20,7 @@ function FeaturesSection() {
         <img className="w-[220px] sm:w-[310px]" src={featureTitle} />
       </div>
       <div className="flex flex-row justify-center">
-        <div className="container pt-10 sm:pt-20 px-64">
+        <div className="container pt-10 sm:pt-20 px-0 md:px-20 xl:px-64">
           {features.map((feature: IFeature, index: number) => {
             return (
               <Feature feature={feature} index={index} key={feature.title} />

@@ -41,7 +41,7 @@ function Link(props: ILinkProps) {
 
   return (
     <m.div
-      className="relative w-[230px] h-[150]"
+      className="relative w-full xl:w-[230px] xl:h-[150]"
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
@@ -54,7 +54,7 @@ function Link(props: ILinkProps) {
           variants={backgroundVariants}
           animate={backgroundControls}
         />
-        <div className="absolute top-0 left-0 h-full flex flex-col justify-between p-8">
+        <div className="absolute top-0 left-0 h-full flex flex-col justify-between py-4 px-6 xl:p-8">
           <div className="flex flex-row items-center h-[40px]">
             <img
               className="w-[40px] mr-2"

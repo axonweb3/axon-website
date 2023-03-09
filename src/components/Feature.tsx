@@ -49,7 +49,7 @@ function Feature(props: IFeatureProps) {
       viewport={{ once: true, amount: 0.6 }}
     >
       <m.div
-        className="w-1/2 sm:w-full basis-6/12"
+        className="w-1/2 sm:w-full basis-6/12 -mt-8 sm:mt-0"
         variants={imageVariants}
       >
         {image}
