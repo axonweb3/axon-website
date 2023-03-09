@@ -1,6 +1,6 @@
 import React from 'react';
 import brandImage from '../assets/img/webp/brand.webp';
-import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import { m, useAnimation, useScroll, useTransform } from 'framer-motion';
 import useScreenSize from 'use-screen-size';
 
 const brandVariants = {
@@ -29,7 +29,7 @@ function Brand() {
 
   return (
     <div className="py-40" ref={ref}>
-      <motion.div
+      <m.div
         className="flex flex-col justify-center items-center"
         style={
           size.screen === 'xs'
@@ -55,7 +55,7 @@ function Brand() {
           Axon is a layer 2 framework built on CKB aims to unleash the power of
           app-chain future.
         </p>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import linkBackground from '../assets/img/webp/link-background.webp';
 import linkHoverBackground from '../assets/img/webp/link-hover.webp';
 import learnMoreImage from '../assets/img/webp/learn-more.webp';
 import { ILink } from '../config';
-import { motion, useAnimationControls } from 'framer-motion';
+import { m, useAnimationControls } from 'framer-motion';
 
 export interface ILinkProps {
   item: ILink;
@@ -29,14 +29,14 @@ function Link(props: ILinkProps) {
   }, [hover, controls]);
 
   return (
-    <motion.div
+    <m.div
       className="relative"
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
       <a href={item.link}>
         <img src={linkBackground} />
-        <motion.img
+        <m.img
           className="absolute top-0 left-0 opacity-0"
           src={linkHoverBackground}
           initial="hidden"
@@ -58,7 +58,7 @@ function Link(props: ILinkProps) {
           </div>
         </div>
       </a>
-    </motion.div>
+    </m.div>
   );
 }
 

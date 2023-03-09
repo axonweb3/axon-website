@@ -1,14 +1,20 @@
 import React from 'react';
+import useScreenSize from 'use-screen-size';
 import { features, IFeature } from '../config';
 import featuresBackground from '../assets/img/webp/features-background.webp';
 import featureTitle from '../assets/img/webp/features-title.webp';
 import Feature from '../components/Feature';
 
 function FeaturesSection() {
+  const size = useScreenSize();
+
   return (
     <div
-      className={`bg-none sm:bg-contain pb-20`}
-      style={{ backgroundImage: `url(${featuresBackground})` }}
+      className={`bg-contain pb-20`}
+      style={{
+        backgroundImage:
+          size.screen === 'xs' ? '' : `url(${featuresBackground})`,
+      }}
     >
       <div className="flex flex-row justify-center pt-16">
         <img className="w-5/12 sm:w-3/12 md:w-2/12" src={featureTitle} />

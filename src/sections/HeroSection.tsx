@@ -5,7 +5,7 @@ import Mask, { IMaskProps } from '../components/Mask';
 import heroBackground from '../assets/img/webp/hero-background.webp';
 import topMaskImage from '../assets/img/webp/top-mask.webp';
 import bottomMaskImage from '../assets/img/webp/bottom-mask.webp';
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { m, useMotionValueEvent, useScroll } from 'framer-motion';
 import Brand from '../components/Brand';
 import Starting from '../components/Strating';
 
@@ -37,8 +37,8 @@ function HeroSection() {
   );
 
   const bottomMaskAnimate: IMaskProps['animate'] = React.useCallback(
-    (containerRect: DOMRect, maskRect: DOMRect) => {
-      const top = containerRect.bottom - maskRect.height;
+    (_, maskRect: DOMRect) => {
+      const top = window.innerHeight - maskRect.height;
       return {
         top,
         transition: HERO_TRANSITION,
@@ -73,7 +73,7 @@ function HeroSection() {
         </div>
 
         <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center z-20">
-          <motion.div
+          <m.div
             className="flex flex-col sm:flex-row mb-10 sm:mb-12 xl:mb-16 2xl:mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
@@ -81,7 +81,7 @@ function HeroSection() {
             <Button text="Open Docsite" href="https://docs.axonweb3.io/" />
             <div className="w-6 h-4 2xl:w-8" />
             <Button text="Open in GitHub" href="https://github.com/axonweb3" />
-          </motion.div>
+          </m.div>
         </div>
       </div>
 

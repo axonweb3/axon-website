@@ -1,5 +1,5 @@
 import {
-  motion,
+  m,
   TargetAndTransition,
   Transition,
   useAnimationControls,
@@ -8,10 +8,7 @@ import React from 'react';
 
 export interface IMaskProps {
   src: string;
-  animate: (
-    containerRect: DOMRect,
-    maskRect: DOMRect,
-  ) => TargetAndTransition;
+  animate: (containerRect: DOMRect, maskRect: DOMRect) => TargetAndTransition;
   containerClassName?: string;
 }
 
@@ -22,24 +19,19 @@ function Mask(props: IMaskProps) {
   const controls = useAnimationControls();
   const [loaded, setLoaded] = React.useState(false);
 
-  const startAnimate = React.useCallback((transition?: Transition) => {
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    const maskRect = maskRef.current?.getBoundingClientRect();
-    const animation = animate(containerRect!, maskRect!);
-    if (transition) {
-      animation.transition = transition;
-    }
-    controls.start(animation);
-    return controls.stop;
-  }, [controls, animate]);
-
-  // React.useEffect(() => {
-  //   const listener = () => startAnimate({ duration: 0 });
-  //   window.addEventListener('resize', listener);
-  //   return () => {
-  //     window.removeEventListener('resize', listener);
-  //   };
-  // }, [startAnimate]);
+  const startAnimate = React.useCallback(
+    (transition?: Transition) => {
+      const containerRect = containerRef.current?.getBoundingClientRect();
+      const maskRect = maskRef.current?.getBoundingClientRect();
+      const animation = animate(containerRect!, maskRect!);
+      if (transition) {
+        animation.transition = transition;
+      }
+      controls.start(animation);
+      return controls.stop;
+    },
+    [controls, animate],
+  );
 
   React.useEffect(() => {
     if (!loaded) {
@@ -47,11 +39,11 @@ function Mask(props: IMaskProps) {
     }
     const stop = startAnimate();
     return stop;
-  }, [loaded]);
+  }, [loaded, startAnimate]);
 
   return (
     <div className={containerClassName} ref={containerRef}>
-      <motion.img
+      <m.img
         className="absolute"
         ref={maskRef}
         src={src}

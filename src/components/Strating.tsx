@@ -1,4 +1,4 @@
-import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import { m, useAnimation, useScroll, useTransform } from 'framer-motion';
 import startingImage from '../assets/img/webp/starting.webp';
 import React from 'react';
 
@@ -18,7 +18,7 @@ function Starting() {
 
   return (
     <div className="flex flex-row justify-center" ref={ref}>
-      <motion.img
+      <m.img
         className="w-10/12 lg:w-8/12 xl:w-6/12"
         style={{
           opacity: rate,

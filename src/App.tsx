@@ -1,6 +1,8 @@
+import { LazyMotion } from 'framer-motion';
 import React from 'react';
 import Footer from './components/Footer';
 import HeroSection from './sections/HeroSection';
+import { domAnimation } from 'framer-motion';
 
 const FeaturesSection = React.lazy(() => import('./sections/FeaturesSection'));
 const FindUsSection = React.lazy(() => import('./sections/FindUsSection'));
@@ -13,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <main>
         <HeroSection />
         <React.Suspense fallback={null}>
@@ -22,7 +24,7 @@ function App() {
         </React.Suspense>
       </main>
       <Footer />
-    </>
+    </LazyMotion>
   );
 }
 
