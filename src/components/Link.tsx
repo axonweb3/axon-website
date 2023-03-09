@@ -30,7 +30,7 @@ function Link(props: ILinkProps) {
 
   return (
     <m.div
-      className="relative"
+      className="relative w-[230px] h-[150]"
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
@@ -46,15 +46,17 @@ function Link(props: ILinkProps) {
         <div className="absolute top-0 left-0 h-full flex flex-col justify-between p-6">
           <div className="flex flex-row items-center">
             <img
-              className="h-8 md:h-6 lg:h-8 2xl:h-9 mr-2 2xl:mr-4"
+              className="w-[40px] mr-2"
               src={item.icon}
               loading="lazy"
               decoding="async"
             />
-            <span className="font-alfarn-2 font-bold">{item.name}</span>
+            <span className="text-[16px] font-alfarn-2 font-bold leading-6">
+              {item.name}
+            </span>
           </div>
           <div>
-            <img className="h-4 2xl:h-5" src={learnMoreImage} />
+            <img className="w-[122px]" src={learnMoreImage} />
           </div>
         </div>
       </a>

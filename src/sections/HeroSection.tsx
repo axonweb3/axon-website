@@ -53,7 +53,7 @@ function HeroSection() {
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
       <div className="sticky top-0 w-screen h-screen flex justify-center">
-        <div className="absolute top-12 sm:top-0 w-full sm:w-9/12 md:w-7/12 lg:w-7/12 xl:w-5/12 2xl:w-4/12 h-full">
+        <div className="absolute top-logo-height sm:top-0 w-full sm:w-9/12 md:w-7/12 lg:w-7/12 xl:w-5/12 2xl:w-4/12 h-full">
           <Mask
             src={topMaskImage}
             containerClassName="absolute top-0 h-full w-full flex flex-col justify-center"
@@ -61,25 +61,25 @@ function HeroSection() {
           />
           <Mask
             src={bottomMaskImage}
-            containerClassName="absolute -top-12 sm:top-0 h-full w-full flex flex-col justify-center"
+            containerClassName="absolute -top-logo-height sm:top-0 h-full w-full flex flex-col justify-center"
             animate={bottomMaskAnimate}
           />
         </div>
 
-        <div className="absolute top-0 left-0 flex flex-row items-center w-full h-12 sm:h-auto bg-white sm:bg-transparent bg-opacity-75">
-          <div className="w-3/12 md:w-2/12 2xl:w-1/12">
+        <div className="absolute top-0 left-0 flex flex-row items-center w-full sm:h-auto bg-white sm:bg-transparent bg-opacity-75">
+          <div className="w-logo-width h-logo-height -ml-[10px] sm:ml-[30px] sm:mt-[10px]">
             <Logo />
           </div>
         </div>
 
         <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center z-20">
           <m.div
-            className="flex flex-col sm:flex-row mb-10 sm:mb-12 xl:mb-16 2xl:mb-20"
+            className="flex flex-col sm:flex-row mb-10 sm:mb-12 2xl:mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
           >
             <Button text="Open Docsite" href="https://docs.axonweb3.io/" />
-            <div className="w-6 h-4 2xl:w-8" />
+            <div className="w-[30px]" />
             <Button text="Open in GitHub" href="https://github.com/axonweb3" />
           </m.div>
         </div>

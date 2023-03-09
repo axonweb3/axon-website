@@ -16,11 +16,11 @@ function FeaturesSection() {
           size.screen === 'xs' ? '' : `url(${featuresBackground})`,
       }}
     >
-      <div className="flex flex-row justify-center pt-16">
-        <img className="w-5/12 sm:w-3/12 md:w-2/12" src={featureTitle} />
+      <div className="flex flex-row justify-center mt-[90px]">
+        <img className="w-[220px] sm:w-[310px]" src={featureTitle} />
       </div>
       <div className="flex flex-row justify-center">
-        <div className="container pt-10 sm:pt-20 w-full sm:w-10/12 lg:w-9/12 xl:w-7/12 2xl:w-5/12">
+        <div className="container pt-10 sm:pt-20 px-64">
           {features.map((feature: IFeature, index: number) => {
             return (
               <Feature feature={feature} index={index} key={feature.title} />

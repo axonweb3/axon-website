@@ -49,24 +49,25 @@ function Feature(props: IFeatureProps) {
       viewport={{ once: true, amount: 0.6 }}
     >
       <m.div
-        className="w-1/2 sm:w-full mb-4 sm:mb-0 basis-5/12 -mt-10"
+        className="w-1/2 sm:w-full basis-6/12"
         variants={imageVariants}
       >
         {image}
       </m.div>
       <m.div
-        className="basis-7/12 py-10 px-20 sm:py-6 sm:px-12 z-30 backdrop-blur-[1px] bg-white bg-opacity-30 rounded-md"
+        className="basis-6/12 pl-8 px-4 z-30 backdrop-blur-[1px] bg-white bg-opacity-30 rounded-md"
         variants={descriptVariants}
       >
-        <div className="border-b-2 border-axon-theme mb-4">
-          <h2 className="text-xl font-alfarn-2 font-bold">{feature.title}</h2>
+        <div className="relative mb-[25px]">
+          <h2 className="text-[18px] font-alfarn-2 font-bold leading-7">{feature.title}</h2>
+          <div className="absolute -bottom-[3px] left-0 w-10/12 border-b-[3px] border-axon-theme" />
         </div>
-        <p className="relative font-neue-kabel font-medium">
-          <span className="absolute -left-12 -top-3 text-7xl text-axon-theme font-serif">
+        <p className="relative font-neue-kabel font-medium leading-6">
+          <span className="absolute -left-9 -top-4 text-7xl text-axon-theme font-serif">
             “
           </span>
           {feature.description}
-          <span className="absolute -right-10 -bottom-12 text-7xl text-axon-theme font-serif">
+          <span className="absolute -right-6 -bottom-12 text-7xl text-axon-theme font-serif">
             ”
           </span>
         </p>
