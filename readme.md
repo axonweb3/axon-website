@@ -31,3 +31,7 @@ pnpm dev
 ## Contributing
 
 We welcome contributions from the community.
+
+## License
+
+Axon Website is open-source software licensed under the MIT license.
