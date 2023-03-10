@@ -19,7 +19,8 @@ function FindUsSection() {
       </div>
       <div className="container flex flex-row justify-center">
         <div className="w-7/12 sm:w-10/12 md:w-auto max-w-[1020px]px-[20px]">
-          <div className="grid grid-rows-4 grid-cols-1 sm:grid-rows-2 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-1 gap-6 pt-10">
+          <div className={`grid grid-rows-${links.length} grid-cols-1 sm:grid-rows-${links.length/2}
+            sm:grid-cols-2 md:grid-cols-${links.length} md:grid-rows-1 gap-6 pt-10`}>
             {links.map((link) => {
               return <Link item={link} key={link.name} />;
             })}

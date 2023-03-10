@@ -42,7 +42,7 @@ function Feature(props: IFeatureProps) {
 
   return (
     <m.div
-      className={`flex items-center flex-col-reverse mb-8 sm:mb-0
+      className={`flex items-center flex-col-reverse mb-8 sm:mb-0 px-6 sm:px-0
       ${index % 2 === 0 ? `sm:flex-row-reverse` : `sm:flex-row`}`}
       initial={size.screen === 'xs' ? 'onscreen' : 'offscreen'}
       whileInView={size.screen === 'xs' ? undefined : 'onscreen'}
