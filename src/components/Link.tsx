@@ -41,7 +41,7 @@ function Link(props: ILinkProps) {
 
   return (
     <m.div
-      className="relative w-full xl:w-[230px] xl:h-[150]"
+      className="relative w-full md:w-[230px] md:h-[150]"
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >

@@ -8,6 +8,7 @@ import bottomMaskImage from '../assets/img/webp/bottom-mask.webp';
 import { m, useMotionValueEvent, useScroll } from 'framer-motion';
 import Brand from '../components/Brand';
 import Starting from '../components/Strating';
+import useScrollSnap from '../hooks/useScrollSnap';
 
 const HERO_TRANSITION = { ease: 'easeOut', duration: 1 };
 const BUTTON_TRANSITION = { duration: 0.3, delay: 0.7 };
@@ -15,15 +16,15 @@ const BUTTON_TRANSITION = { duration: 0.3, delay: 0.7 };
 function HeroSection() {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const [scrollSnap, setScrollSnap] = React.useState(true);
-
-  React.useEffect(() => {
-    const $html = document.querySelector('html');
-    $html!.className = scrollSnap ? 'sm:snap-y sm:snap-mandatory sm:scroll-smooth' : '';
-  }, [scrollSnap]);
+  const { setScrollSnap } = useScrollSnap();
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
-    setScrollSnap(progress !== 1);
+    if (progress === 0) {
+      setScrollSnap(true);
+    }
+    if (progress === 1) {
+      setScrollSnap(false);
+    }
   });
 
   const topMaskAnimate: IMaskProps['animate'] = React.useCallback(

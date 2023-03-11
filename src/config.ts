@@ -47,21 +47,21 @@ export interface ILink {
 }
 
 export const links: ILink[] = [
-  {
-    name: 'Discord',
-    link: 'https://discord.com',
-    icon: discordIcon,
-  },
+  // {
+  //   name: 'Discord',
+  //   link: 'https://discord.com',
+  //   icon: discordIcon,
+  // },
   {
     name: 'GitHub',
     link: 'https://github.com/axonweb3',
     icon: githubIcon,
   },
-  {
-    name: 'Medium',
-    link: 'https://medium.com',
-    icon: mediumIcon,
-  },
+  // {
+  //   name: 'Medium',
+  //   link: 'https://medium.com',
+  //   icon: mediumIcon,
+  // },
   {
     name: 'Twitter',
     link: 'https://twitter.com/AxonWeb3',
