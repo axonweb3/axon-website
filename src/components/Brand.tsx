@@ -2,6 +2,7 @@ import React from 'react';
 import brandImage from '../assets/img/webp/brand.webp';
 import { m, useAnimation, useScroll, useTransform } from 'framer-motion';
 import useScreenSize from 'use-screen-size';
+import { description } from '../config';
 
 const brandVariants = {
   visible: {
@@ -52,8 +53,7 @@ function Brand() {
           className="w-10/12 sm:w-8/12 md:w-6/12 xl:w-4/12 text-center text-[20px] font-medium font-neue-kabel z-30
         backdrop-blur-[2px] bg-white bg-opacity-30 rounded-md"
         >
-          Axon is a layer 2 framework built on CKB aims to unleash the power of
-          app-chain future.
+          {description}
         </p>
       </m.div>
     </div>
