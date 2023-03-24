@@ -2,9 +2,9 @@ import universalAbstractionImage from './assets/img/webp/universal-abstraction.w
 import developerFriendlyImage from './assets/img/webp/developer-friendly.webp';
 import nativeInteroperabilityImage from './assets/img/webp/native-interoperability.webp';
 import highPerformanceImage from './assets/img/webp/high-performance.webp';
-import discordIcon from './assets/img/webp/discord.webp';
+// import discordIcon from './assets/img/webp/discord.webp';
 import githubIcon from './assets/img/webp/github.webp';
-import mediumIcon from './assets/img/webp/medium.webp';
+// import mediumIcon from './assets/img/webp/medium.webp';
 import twitterIcon from './assets/img/webp/twitter.webp';
 
 export interface IFeature {
@@ -12,6 +12,8 @@ export interface IFeature {
   description: string;
   image: string;
 }
+
+export const description = "Axon is a Layer 2 framework that unleashes the power of app-chain future.";
 
 export const features: IFeature[] = [
   {
