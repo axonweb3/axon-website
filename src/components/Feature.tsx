@@ -58,27 +58,29 @@ function Feature(props: IFeatureProps) {
 
   return (
     <m.div
-      className={`flex justify-center flex-col-reverse px-6 sm:px-0 basis-3
+      className={`flex justify-center items-center flex-col-reverse px-6 sm:px-0 mb-16 sm:mb-0 basis-3
       ${index % 2 === 0 ? `sm:flex-row-reverse` : `sm:flex-row`}`}
       initial={size.screen === 'xs' ? 'onscreen' : 'offscreen'}
       whileInView={size.screen === 'xs' ? undefined : 'onscreen'}
       viewport={{ once: true, amount: 0.6 }}
     >
       <m.div
-        className="w-1/2 sm:w-full basis-4/12 -mt-8 sm:mt-0"
+        className="w-2/3 sm:w-full basis-4/12 -mt-12 sm:mt-0"
         variants={imageVariants}
       >
         {image}
       </m.div>
       <m.div
-        className="flex relative bg-contain bg-no-repeat basis-8/12 z-30"
+        className="flex bg-contain relative basis-8/12 z-30"
         variants={descriptVariants}
       >
         <img
-          className="absolute top-0 left-0 w-full"
+          className="hidden absolute top-0 left-0 w-full lg:block"
           src={backgrounds[index]}
         />
-        <div className="pl-20 pt-12 pr-24">
+        <div className="px-8 sm:pl-20 sm:py-12 sm:pr-24 bg-transparent
+          sm:bg-white sm:backdrop-blur-[2px] sm:bg-opacity-50 sm:rounded-md
+          lg:bg-transparent lg:backdrop-blur-none lg:bg-opacity-100 lg:rounded-none">
           <div className="relative mb-[25px]">
             <h2 className="text-[18px] font-alfarn-2 font-bold leading-7">
               {feature.title}

@@ -49,10 +49,7 @@ function Brand() {
           className="w-8/12 sm:w-7/12 md:w-5/12 lg:w-5/12 xl:w-4/12 mb-2"
           src={brandImage}
         />
-        <p
-          className="w-10/12 sm:w-8/12 md:w-6/12 xl:w-4/12 text-center text-[20px] font-medium font-neue-kabel z-30
-        backdrop-blur-[2px] bg-white bg-opacity-30 rounded-md"
-        >
+        <p className="w-10/12 sm:w-8/12 md:w-6/12 xl:w-4/12 text-center text-[20px] font-medium font-neue-kabel z-30">
           {description}
         </p>
       </m.div>

@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        'logo-width': '173px',
-        'logo-height': '86px',
+        'logo-width': '130px',
+        'logo-height': '64px',
         'button-width': '186px',
         'button-height': '48px',
       },

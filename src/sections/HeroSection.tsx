@@ -67,7 +67,7 @@ function HeroSection() {
         </div>
 
         <div className="absolute top-0 left-0 flex flex-row items-center w-full sm:h-auto bg-white md:bg-transparent bg-opacity-75">
-          <div className="w-logo-width h-logo-height -ml-[10px] md:ml-[30px] md:mt-[10px]">
+          <div className="w-logo-width h-logo-height ml-[5px] md:ml-[30px] md:mt-[10px]">
             <Logo />
           </div>
         </div>
