@@ -7,8 +7,9 @@ import topMaskImage from '../assets/img/webp/top-mask.webp';
 import bottomMaskImage from '../assets/img/webp/bottom-mask.webp';
 import { m, useMotionValueEvent, useScroll } from 'framer-motion';
 import Brand from '../components/Brand';
-import Starting from '../components/Strating';
 import useScrollSnap from '../hooks/useScrollSnap';
+
+const Starting = React.lazy(() => import('../components/Starting'));
 
 const HERO_TRANSITION = { ease: 'easeOut', duration: 1 };
 const BUTTON_TRANSITION = { duration: 0.3, delay: 0.7 };
@@ -96,7 +97,9 @@ function HeroSection() {
           style={{ marginTop: '-50vh' }}
         >
           <div className="flex flex-col h-full w-full justify-center items-center pt-8 sm:pt-0">
-            <Starting />
+            <React.Suspense fallback={false}>
+              <Starting />
+            </React.Suspense>
           </div>
         </section>
       </div>
