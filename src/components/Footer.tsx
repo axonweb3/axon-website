@@ -10,7 +10,7 @@ function Footer() {
           &copy; Axon, Inc. 2023.
         </span>
       </div>
-      <div className="hidden md:grid md:grid-cols-4 gap-2 w-1/4 2xl:w-2/12">
+      <div className="hidden md:grid md:grid-cols-3 gap-2 w-1/4 2xl:w-2/12">
         {links.map((item) => {
           return (
             <div

@@ -15,7 +15,8 @@ module.exports = {
         'alfarn-2': ['alfarn-2'],
       },
       colors: {
-        'axon-theme': '#F9ED56',
+        'axon-theme': '#F0CE59',
+        'axon-background': '#F7F3ED',
       },
     },
   },
