@@ -17,7 +17,6 @@ const variants: Variants = {
 function Loading(props: PropsWithChildren) {
   const { loaded } = React.useContext(ResourceLoadContext);
   const [showLoading, setShowLoading] = React.useState(true);
-  const [showContent, setShowContent] = React.useState(true);
   const controls = useAnimationControls();
 
   React.useEffect(() => {
@@ -26,9 +25,6 @@ function Loading(props: PropsWithChildren) {
       setTimeout(() => {
         setShowLoading(false);
       }, 300);
-      setTimeout(() => {
-        setShowContent(true);
-      }, 200);
     }
   }, [loaded, controls]);
 
@@ -47,9 +43,7 @@ function Loading(props: PropsWithChildren) {
           </div>
         </m.div>
       )}
-      <div className={!showContent ? 'opacity-0' : ''}>
-        {props.children}
-      </div>
+      {props.children}
     </>
   );
 }
