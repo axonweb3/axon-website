@@ -1,25 +1,56 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import BounceLoader from 'react-spinners/BounceLoader';
-import useResourceLoad from '../hooks/useResourceLoad';
-import heroBackground from '../assets/img/webp/hero-background.webp';
+import { ResourceLoadContext } from '../hooks/useResourceLoad';
+import loadingBackground from '../assets/img/webp/loading-background.webp';
+import { m, useAnimationControls, Variants } from 'framer-motion';
 
-function Loading() {
-  const { loading, progress } = useResourceLoad();
+const variants: Variants = {
+  offscreen: {
+    opacity: 0,
+  },
+  onscreen: {
+    opacity: 1,
+    transition: { ease: 'easeOut', duration: 1, delay: 0.2 },
+  },
+};
 
-  if (!loading) {
-    return null;
-  }
+function Loading(props: PropsWithChildren) {
+  const { loaded } = React.useContext(ResourceLoadContext);
+  const [showLoading, setShowLoading] = React.useState(true);
+  const [showContent, setShowContent] = React.useState(true);
+  const controls = useAnimationControls();
+
+  React.useEffect(() => {
+    if (loaded) {
+      controls.start('offscreen');
+      setTimeout(() => {
+        setShowLoading(false);
+      }, 300);
+      setTimeout(() => {
+        setShowContent(true);
+      }, 200);
+    }
+  }, [loaded, controls]);
 
   return (
-    <div
-      className="relative top-0 left-0 flex justify-center items-center w-screen h-screen z-50"
-      style={{ backgroundImage: `url(${heroBackground})` }}
-    >
-      <div className="flex flex-col justify-center items-center">
-        <BounceLoader className="mb-4" color="#F0CE59" size={80} />
-        <span className="font-neue-kabel text-lg">Loading... {progress}%</span>
+    <>
+      {showLoading && (
+        <m.div
+          className="fixed top-0 left-0 bg-cover flex justify-center items-center w-screen h-screen z-50"
+          style={{ backgroundImage: `url(${loadingBackground})` }}
+          variants={variants}
+          animate={controls}
+        >
+          <div className="flex flex-col justify-center items-center">
+            <BounceLoader className="mb-4" color="#F0CE59" size={100} />
+            <span className="font-neue-kabel text-lg">Loading...</span>
+          </div>
+        </m.div>
+      )}
+      <div className={!showContent ? 'opacity-0' : ''}>
+        {props.children}
       </div>
-    </div>
+    </>
   );
 }
 
