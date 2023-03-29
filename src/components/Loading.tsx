@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-import BounceLoader from 'react-spinners/BounceLoader';
 import { ResourceLoadContext } from '../hooks/useResourceLoad';
 import loadingBackground from '../assets/img/webp/loading-background.webp';
 import { m, useAnimationControls, Variants } from 'framer-motion';
@@ -36,12 +35,7 @@ function Loading(props: PropsWithChildren) {
           style={{ backgroundImage: `url(${loadingBackground})` }}
           variants={variants}
           animate={controls}
-        >
-          <div className="flex flex-col justify-center items-center">
-            <BounceLoader className="mb-4" color="#F0CE59" size={100} />
-            <span className="font-neue-kabel text-lg">Loading...</span>
-          </div>
-        </m.div>
+        />
       )}
       {props.children}
     </>
