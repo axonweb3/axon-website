@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        'logo-width': '173px',
-        'logo-height': '86px',
+        'logo-width': '130px',
+        'logo-height': '64px',
         'button-width': '186px',
         'button-height': '48px',
       },
@@ -15,7 +15,8 @@ module.exports = {
         'alfarn-2': ['alfarn-2'],
       },
       colors: {
-        'axon-theme': '#F9ED56',
+        'axon-theme': '#F0CE59',
+        'axon-background': '#F7F3ED',
       },
     },
   },

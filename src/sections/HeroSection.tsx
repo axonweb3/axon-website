@@ -7,8 +7,10 @@ import topMaskImage from '../assets/img/webp/top-mask.webp';
 import bottomMaskImage from '../assets/img/webp/bottom-mask.webp';
 import { m, useMotionValueEvent, useScroll } from 'framer-motion';
 import Brand from '../components/Brand';
-import Starting from '../components/Strating';
 import useScrollSnap from '../hooks/useScrollSnap';
+import { useResourceLoad } from '../hooks/useResourceLoad';
+
+const Starting = React.lazy(() => import('../components/Starting'));
 
 const HERO_TRANSITION = { ease: 'easeOut', duration: 1 };
 const BUTTON_TRANSITION = { duration: 0.3, delay: 0.7 };
@@ -17,6 +19,7 @@ function HeroSection() {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const { setScrollSnap } = useScrollSnap();
+  const { loaded } = useResourceLoad();
 
   useMotionValueEvent(scrollYProgress, 'change', (progress) => {
     if (progress === 0) {
@@ -52,7 +55,7 @@ function HeroSection() {
       className={`relative bg-cover sm:bg-fixed`}
       style={{ backgroundImage: `url(${heroBackground})` }}
     >
-      <div className="sticky top-0 w-screen h-screen flex justify-center">
+      <div className="sticky top-0 w-screen h-screen flex justify-center" style={{ opacity: loaded ? 100 : 0 }}>
         <div className="absolute top-logo-height md:top-0 w-full sm:w-9/12 md:w-7/12 lg:w-7/12 xl:w-5/12 2xl:w-4/12 h-full">
           <Mask
             src={topMaskImage}
@@ -66,8 +69,8 @@ function HeroSection() {
           />
         </div>
 
-        <div className="absolute top-0 left-0 flex flex-row items-center w-full sm:h-auto bg-white md:bg-transparent bg-opacity-75">
-          <div className="w-logo-width h-logo-height -ml-[10px] md:ml-[30px] md:mt-[10px]">
+        <div className="absolute top-0 left-0 flex flex-row items-center w-full sm:h-auto bg-axon-background md:bg-transparent bg-opacity-75">
+          <div className="w-logo-width h-logo-height ml-[5px] md:ml-[30px] md:mt-[10px]">
             <Logo />
           </div>
         </div>
@@ -85,7 +88,7 @@ function HeroSection() {
         </div>
       </div>
 
-      <div style={{ marginTop: '-100vh' }} ref={ref}>
+      <div style={{ marginTop: '-100vh', opacity: loaded ? 100 : 0 }} ref={ref}>
         <section className="w-screen h-screen flex justify-center -mt-screen snap-center">
           <div className="flex flex-col h-full justify-center items-center pt-8 sm:pt-0">
             <Brand />
@@ -96,7 +99,9 @@ function HeroSection() {
           style={{ marginTop: '-50vh' }}
         >
           <div className="flex flex-col h-full w-full justify-center items-center pt-8 sm:pt-0">
-            <Starting />
+            <React.Suspense fallback={false}>
+              <Starting />
+            </React.Suspense>
           </div>
         </section>
       </div>

@@ -5,6 +5,7 @@ import {
   useAnimationControls,
 } from 'framer-motion';
 import React from 'react';
+import { ResourceLoadContext } from '../hooks/useResourceLoad';
 
 export interface IMaskProps {
   src: string;
@@ -17,7 +18,7 @@ function Mask(props: IMaskProps) {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
   const maskRef = React.useRef<HTMLImageElement | null>(null);
   const controls = useAnimationControls();
-  const [loaded, setLoaded] = React.useState(false);
+  const { loaded } = React.useContext(ResourceLoadContext);
 
   const startAnimate = React.useCallback(
     (transition?: Transition) => {
@@ -48,7 +49,6 @@ function Mask(props: IMaskProps) {
         ref={maskRef}
         src={src}
         animate={controls}
-        onLoad={() => setLoaded(true)}
       />
     </div>
   );

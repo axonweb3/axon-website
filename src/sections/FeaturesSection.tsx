@@ -10,17 +10,17 @@ function FeaturesSection() {
 
   return (
     <div
-      className={`bg-contain pb-6 sm:pb-20`}
+      className={`bg-cover pb-6 pt-[40px] sm:pt-[80px]`}
       style={{
         backgroundImage:
           size.screen === 'xs' ? '' : `url(${featuresBackground})`,
       }}
     >
-      <div className="flex flex-row justify-center mt-[90px]">
+      <div className="flex flex-row justify-center">
         <img className="w-[220px] sm:w-[310px]" src={featureTitle} />
       </div>
       <div className="flex flex-row justify-center">
-        <div className="container pt-10 sm:pt-20 px-0 md:px-20 xl:px-64">
+        <div className="sm:grid grid-cols-1 grid-rows-4 gap-44 container py-8 sm:py-20 px-0 lg:px-20 xl:px-48 2xl:px-64">
           {features.map((feature: IFeature, index: number) => {
             return (
               <Feature feature={feature} index={index} key={feature.title} />
