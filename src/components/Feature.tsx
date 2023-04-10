@@ -82,7 +82,7 @@ function Feature(props: IFeatureProps) {
           sm:bg-white sm:backdrop-blur-[2px] sm:bg-opacity-50 sm:rounded-md
           lg:bg-transparent lg:backdrop-blur-none lg:bg-opacity-100 lg:rounded-none">
           <div className="relative mb-[25px]">
-            <h2 className="text-[18px] font-alfarn-2 font-bold leading-7">
+            <h2 className="text-[20px] font-alfarn-2 font-bold leading-7">
               {feature.title}
             </h2>
             <div

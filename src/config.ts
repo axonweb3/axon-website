@@ -14,34 +14,34 @@ export interface IFeature {
   color: string;
 }
 
-export const description = "Axon is a Layer 2 framework that unleashes the power of app-chain future.";
+export const description = "Axon is a Layer 2 framework that unleashes the power of appchain future.";
 
 export const features: IFeature[] = [
   {
     title: 'Universal Abstraction',
     description:
-      'Axon’s abstraction capacity is derived from the universal CKB, which allows for the construction of any account model and virtual machine instruction. Devs on Axon can load and verify cells through a precompiled contract on CKB-VM, which makes the development of multi-chain, contract wallet, and other applications much easier.',
+      'The abstraction capacity of Axon allows for the construction of any account model and virtual machine instructions. Development on Axon can be done through precompiled contracts, which opens up endless possibilities to build appchains, contract wallets, and other applications.',
     icon: universalAbstractionImage,
     color: '#E46C2D',
   },
   {
     title: 'Developer-Friendly Design',
     description:
-      'Axon’s full-fledged toolkit allows web3 developers to build dApps right away. The all-in-one client can be installed in less than 10 minutes.',
+      'With a full-fledged toolkit built by Axon, Web3 developers can start building right away. By automating off-chain communication, Axon significantly reduces the cost of deployment.',
     icon: developerFriendlyImage,
     color: '#4352D1',
   },
   {
     title: 'Native Interoperability',
     description:
-      'More than 100% EVM compatible, Axon presents a new paradigm with native cross-chain capacity that supports all the encryption algorithms used by mainstream crypto wallets.',
+      'As a highly versatile framework, Axon enjoys superb native interoperability. More than 100% EVM compatible, Axon will soon be compatible with Inter-Blockchain Communication Protocol (IBC)—the gateway to the Cosmos ecosystem. Axon will onboard more protocols for seamless integration across various blockchain networks.',
     icon: nativeInteroperabilityImage,
     color: '#F8D254',
   },
   {
     title: 'High Performance',
     description:
-      'Axon‘s optimized Byzantine Fault Tolerance algorithm enables over 3000 TPS (tested 1000+ TPS on Uniswap V3) with fast transaction finality.',
+      'Axon uses a new Byzantine Fault Tolerance (BFT) based consensus algorithm that supports over 3000 TPS (tested 1000+ TPS on Uniswap V3) across hundreds of nodes with fast transaction finality.',
     icon: highPerformanceImage,
     color: '#ED6F78',
   },
