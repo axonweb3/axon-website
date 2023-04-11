@@ -58,14 +58,14 @@ function Feature(props: IFeatureProps) {
 
   return (
     <m.div
-      className={`flex justify-center items-center sm:items-start flex-col-reverse px-6 sm:px-0 mb-16 sm:mb-0 basis-3
+      className={`flex justify-center items-center sm:items-start flex-col-reverse px-6 sm:px-0 mb-[50px] sm:mb-0 basis-3
       ${index % 2 === 0 ? `sm:flex-row-reverse` : `sm:flex-row`}`}
       initial={size.screen === 'xs' ? 'onscreen' : 'offscreen'}
       whileInView={size.screen === 'xs' ? undefined : 'onscreen'}
       viewport={{ once: true, amount: 0.6 }}
     >
       <m.div
-        className="w-2/3 sm:w-full basis-4/12 -mt-8 sm:mt-0"
+        className="w-2/3 sm:w-full basis-4/12"
         variants={imageVariants}
       >
         {image}

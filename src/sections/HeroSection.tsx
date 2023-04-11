@@ -77,7 +77,7 @@ function HeroSection() {
 
         <div className="absolute bottom-0 left-0 w-full flex flex-row justify-center z-20">
           <m.div
-            className="flex flex-col sm:flex-row mb-10 sm:mb-12 2xl:mb-20"
+            className="flex flex-col sm:flex-row mb-[50px] sm:mb-12 2xl:mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: BUTTON_TRANSITION }}
           >
