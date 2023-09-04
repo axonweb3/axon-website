@@ -64,11 +64,11 @@ export const links: ILink[] = [
     link: 'https://github.com/axonweb3',
     icon: githubIcon,
   },
-  {
-    name: 'Medium',
-    link: 'https://medium.com/@axon_web3',
-    icon: mediumIcon,
-  },
+  // {
+  //   name: 'Medium',
+  //   link: 'https://medium.com/@axon_web3',
+  //   icon: mediumIcon,
+  // },
   {
     name: 'Twitter',
     link: 'https://twitter.com/AxonWeb3',
